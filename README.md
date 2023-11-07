@@ -1,0 +1,1 @@
+# 2023.2.qa-automacao-avancada
