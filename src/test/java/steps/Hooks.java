@@ -1,24 +1,27 @@
 package steps;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import org.openqa.selenium.WebDriver;
-import runner.support.BrowserFactory;
+import io.cucumber.java.*;
+import runner.base_class.BaseSteps;
 
-public class Hooks
-{
-    public static WebDriver driver;
-
+public class Hooks extends BaseSteps {
     @Before
-    public void antesDoTeste()
-    {
-        driver = BrowserFactory.getBrowser();
+    public void antesDoTeste(Scenario _scenario) {
+        scenario = _scenario;
     }
 
     @After
-    public void depoisDoTeste()
-    {
-        driver.quit();
-        driver = null;
+    public void depoisDoTeste() {
+        if (scenario.isFailed())
+            screenshot();
+    }
+
+    @BeforeAll
+    public static void antesDeTudo() {
+        openBrownser();
+    }
+
+    @AfterAll
+    public static void depoisDeTudo() {
+        closeBrownser();
     }
 }

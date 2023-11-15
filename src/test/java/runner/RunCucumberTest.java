@@ -1,8 +1,16 @@
 package runner;
 
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.Cucumber;
+import com.rajatthareja.reportbuilder.ReportBuilder;
+import com.rajatthareja.reportbuilder.Color;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -30,4 +38,20 @@ import io.cucumber.junit.Cucumber;
 )
 
 public class RunCucumberTest {
+    @AfterClass
+    public static void AfterAllTest() {
+
+        // Report-Builder
+        List<Object> cucumberJsonReports = new ArrayList<>();
+        ReportBuilder reportBuilder = new ReportBuilder();
+        String dataReport = (new SimpleDateFormat("MMM dd, yyyy (EEE) | HH:mm:ss zzz")).format(new Date());
+
+        cucumberJsonReports.add(new File("target/cucumber/index.json"));
+        reportBuilder.setReportDirectory("target/cucumber/report-builder/");
+        reportBuilder.setReportFileName("index");
+        reportBuilder.setReportColor(Color.CYAN); // http://materializecss.com/color.html
+        reportBuilder.setReportTitle("Automacao Avancada");
+        reportBuilder.setAdditionalInfo("Date", dataReport);
+        reportBuilder.build(cucumberJsonReports);
+    }
 }
