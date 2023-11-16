@@ -14,7 +14,12 @@ public class BrowserFactory
     }
 
     public static WebDriver getBrowser() {
-        return getBrowser(Bronser.CHROME_HEADLESS);
+        String ci = System.getenv().get("PIPELINE");
+        if (ci != null && ci.equals("github_actions")) {
+            return getBrowser(Bronser.CHROME_HEADLESS);
+        } else {
+            return getBrowser(Bronser.CHROME);
+        }
     }
 
     public static WebDriver getBrowser(Bronser nav)
