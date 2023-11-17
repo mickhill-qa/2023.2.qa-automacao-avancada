@@ -1,7 +1,7 @@
 # https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 name: Cucumber
 
-# Quando Excecutar a PIPELINE
+# When to run the PIPELINE
 on:
   pull_request:
     branches:
@@ -16,12 +16,13 @@ on:
     tags:
       - '**'
 
+# Config permissions Report
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# O que excecutar na PIPELINE
+# What run on the PIPELINE
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -29,23 +30,24 @@ jobs:
       - name: Configure git repository
         uses: actions/checkout@v3
 
-      - name: Configurando Java
+      - name: Configure Java
         uses: actions/setup-java@v3
         with:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
 
-      - name: Configurando WebDriver for Chrome
+      - name: Configure WebDriver for Chrome
         uses: nanasess/setup-chromedriver@v1
         with:
           chromedriver-version: '102.0.5005.61'
 
-      - name: Executando Test
+      - name: Run Test
         run: |
           export PIPELINE=github_actions
           mvn -q test || true
 
+      # Config Report
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
 
@@ -58,5 +60,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
 
-      - name: Link Relatorio
+      - name: Link Report
         run: echo 'https://mickhill-qa.github.io/2023.2.qa-automacao-avancada'
