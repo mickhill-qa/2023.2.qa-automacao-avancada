@@ -5,12 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserFactory
 {
     public static enum Bronser {
         CHROME,
-        CHROME_HEADLESS
+        CHROME_HEADLESS,
+        FIREFOX,
+        FIREFOX_HEADLESS
     }
 
     public static WebDriver getBrowser() {
@@ -26,6 +30,7 @@ public class BrowserFactory
     {
         WebDriver navegador;
         ChromeOptions options;
+        FirefoxOptions firefoxOptions;
 
         switch (nav) {
             case CHROME:
@@ -40,6 +45,17 @@ public class BrowserFactory
                 WebDriverManager.chromedriver().setup();
                 options = getChromeHeadlessOptions();
                 navegador = new ChromeDriver(options);
+                break;
+            case FIREFOX:
+                WebDriverManager.firefoxdriver().setup();
+                navegador = new FirefoxDriver();
+                break;
+            case FIREFOX_HEADLESS:
+                WebDriverManager.firefoxdriver().setup();
+                firefoxOptions = new FirefoxOptions();
+                firefoxOptions.addArguments("--headless");
+                firefoxOptions.addArguments("--window-size=1920,1080");
+                navegador = new FirefoxDriver(firefoxOptions);
                 break;
             default:
                 navegador = null;

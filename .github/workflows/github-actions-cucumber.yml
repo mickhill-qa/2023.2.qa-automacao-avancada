@@ -1,6 +1,7 @@
 # https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 name: Cucumber
 
+# Quando Excecutar a PIPELINE
 on:
   pull_request:
     branches:
@@ -20,11 +21,11 @@ permissions:
   pages: write
   id-token: write
 
+# O que excecutar na PIPELINE
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-
       - name: Configure git repository
         uses: actions/checkout@v3
 
