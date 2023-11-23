@@ -27,6 +27,7 @@ public class CadastroSeuBarrigaPage extends BasePage {
         driver.findElement(fieldSenha).sendKeys(senha);
         driver.findElement(btnCadastrar).click();
     }
+
     public void cadastrarSeuBarriga(String nome, String email, String senha){
         driver.findElement(fieldNome).sendKeys(nome);
         driver.findElement(fieldEmail).sendKeys(email);
@@ -38,10 +39,5 @@ public class CadastroSeuBarrigaPage extends BasePage {
         String text = driver.findElement(validaMessage).getText();
         Assert.assertEquals(text, message);
     }
-
-
-
-
-
 
 }
