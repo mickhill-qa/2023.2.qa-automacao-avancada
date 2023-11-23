@@ -1,12 +1,18 @@
 package steps;
+import io.cucumber.java.ca.Quan;
 import io.cucumber.java.pt.*;
 import org.junit.Assert;
 import pages.CadastroSeuBarrigaPage;
 import runner.base_class.BaseSteps;
+import com.github.javafaker.Faker;
 
 public class CadastroSeuBarrigaSteps  extends BaseSteps {
 
     CadastroSeuBarrigaPage paginaCadastro = new CadastroSeuBarrigaPage();
+    private Faker faker = new Faker();
+    private String emailAleatorio;
+    private String senhaAleatoria;
+    private String nomeAleatorio;
 
     @Dado("que o usuario esta na pagina de cadastro")
     public void que_o_usuario_esta_na_pagina_de_cadastro() {
@@ -14,21 +20,24 @@ public class CadastroSeuBarrigaSteps  extends BaseSteps {
         screenshot();
     }
 
-    @Quando("o usuario preeche o campo nome com {string}")
-    public void o_usuario_preeche_o_nome_com(String _nome) {
-        paginaCadastro.preencherCampoNome(_nome);
+    @Quando("o usuario preenche o campo nome com um nome")
+    public void o_usuario_preenche_o_nome_com_um_nome() {
+        nomeAleatorio = faker.name().fullName();
+        paginaCadastro.preencherCampoNome(nomeAleatorio);
         screenshot();
     }
 
-    @E("o usuario preeche o campo email com {string}")
-    public void o_usuario_preeche_o_email_com(String _email) {
-        paginaCadastro.preencherCampoEmail(_email);
+    @Quando("o usuario preenche o campo email com um email")
+    public void o_usuario_preenche_o_campo_email_com_um_email() {
+        emailAleatorio = faker.internet().emailAddress();
+        paginaCadastro.preencherCampoEmail(emailAleatorio);
         screenshot();
     }
 
-    @E("o usuario preeche o campo senha com {string}")
-    public void o_usuario_preeche_a_senha_com(String _senha) {
-        paginaCadastro.preencherCampoSenha(_senha);
+    @E("o usuario preenche o campo senha com uma senha")
+    public void o_usuario_preenche_a_senha_com_uma_senha() {
+        senhaAleatoria = faker.internet().password();
+        paginaCadastro.preencherCampoSenha(senhaAleatoria);
         screenshot();
     }
 
