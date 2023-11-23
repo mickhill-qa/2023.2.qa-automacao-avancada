@@ -11,7 +11,7 @@ public class CadastroSeuBarrigaPage extends BasePage {
     private By fieldNome = By.id("nome");
     private By fieldEmail = By.id("email");
     private By fieldSenha = By.id("senha");
-    private By btnCadastrar = By.cssSelector("input[type=submit]");
+    private By btnCadastrar = By.className("btn");
     private By validaMessage = By.className("alert");
 
     public void validaTelaCadastro(){

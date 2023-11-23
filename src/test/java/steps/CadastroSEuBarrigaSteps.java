@@ -13,16 +13,14 @@ public class CadastroSEuBarrigaSteps extends BaseSteps {
         seuBarrigaPage.validaTelaCadastro();
     }
 
-    @Quando("o usuario preencher os campos {string}, {string}, {string} e clicar em Cadastrar com Sucesso")
+    @Quando("o usuario preencher os campos {string}, {string}, {string} e clicar em Cadastrar")
     public void o_usuario_preencher_os_campos_e_clicar_em_cadastrar_com_sucesso(String nome, String email, String senha) {
         seuBarrigaPage.cadastrarSucesso(nome, email, senha);
 
     }
 
     @Entao("o sistema mostrarar a mensagem {string}")
-    public void o_sistema_mostrarar_a_mensagem(String message) {
-        seuBarrigaPage.messageValidation(message);
-    }
+    public void o_sistema_mostrarar_a_mensagem(String message) { seuBarrigaPage.messageValidation(message); }
 
     @Quando("preencher os campos {string}, {string}, {string} e clicar em Cadastrar")
     public void preencher_os_campos_e_clicar_em_cadastrar(String nome, String email, String senha) {

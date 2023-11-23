@@ -7,8 +7,9 @@ Funcionalidade: Cadastro
 
   Cenario: Cadastro com Sucesso
     Dado que o usuario esteja na tela de Cadastro
-    Quando o usuario preencher os campos "<nome>", "<email>", "<senha>" e clicar em Cadastrar com Sucesso
+    Quando o usuario preencher os campos "<nome>", "<email>", "<senha>" e clicar em Cadastrar
     Entao o sistema mostrarar a mensagem "Usuário inserido com sucesso"
+
 
   Esquema do Cenario: Testes dos campos de Cadastros
     Dado que o usuario esteja na tela de Cadastro
