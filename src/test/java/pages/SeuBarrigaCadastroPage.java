@@ -11,7 +11,7 @@ public class SeuBarrigaCadastroPage extends BasePage {
     private By campoNome = By.id("nome");
     private By campoEmail = By.id("email");
     private By campoSenha = By.id("senha");
-    private By btnCadastrar = By.className("btn btn-primary");
+    private By btnCadastrar = By.xpath("/html/body/div[2]/form/input");
 
     public void abrir() {
         driver.get(url);
@@ -26,20 +26,22 @@ public class SeuBarrigaCadastroPage extends BasePage {
     public void preencherCampoSenha(String _texto) {
         driver.findElement(campoSenha).sendKeys(_texto);
     }
-
-    public void validaMsgCadastro(){
-
-
-        String Sucesso = driver.findElement(By.xpath("/html/body/div[1]")).getText();
-        assertEquals("Usuário inserido com sucesso", Sucesso);
-
-        String FaltaCampoSenha = driver.findElement(By.xpath("/html/body/div[1]")).getText();
-        assertEquals("Usuário inserido com sucesso", FaltaCampoSenha);
-
-
-    }
-
     public void clicarBtnCadastrar() {
         driver.findElement(btnCadastrar).click();
     }
+    public void validaMsgCadastroSucesso(){
+
+        String Sucesso = driver.findElement(By.xpath("/html/body/div[1]")).getText();
+
+        assertEquals("Usuário inserido com sucesso", Sucesso);
+
+    }
+
+    public void validaMsgCadastro(){
+
+        String FaltaCampoSenha = driver.findElement(By.xpath("/html/body/div[1]")).getText();
+        assertEquals("Senha é um campo obrigatório", FaltaCampoSenha);
+
+    }
+
 }

@@ -1,16 +1,12 @@
 package steps;
 
 import io.cucumber.java.pt.*;
-
 import pages.SeuBarrigaCadastroPage;
-import pages.GoogleResultadosPesquisaPage;
 import runner.base_class.BaseSteps;
 
 public class CadastroSeuBarrigaSteps extends BaseSteps {
 
     SeuBarrigaCadastroPage paginaCadastro = new SeuBarrigaCadastroPage();
-    GoogleResultadosPesquisaPage paginaResultados = new GoogleResultadosPesquisaPage();
-
 
     @Dado("que o usuario esteja na pagina de cadastro do site do seu barriga")
     public void que_o_usuario_esteja_no_site_https_seubarriga_wcaquino_me_cadastro() {
@@ -19,7 +15,7 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
     @E("preencha os campos Nome, Email e Senha conforme as obrigatoriedades de cada campo")
     public void preencha_os_campos_nome_email_e_senha_conforme_as_obrigatoriedades_de_cada_campo() {
 
-        paginaCadastro.preencherCampoEmail("anderson.ramosmaciel@gmail.com");
+        paginaCadastro.preencherCampoEmail("teste1.ramosmaciel@gmail.com");
         paginaCadastro.preencherCampoNome("Anderson Ramos Maciel");
         paginaCadastro.preencherCampoSenha("And3rson123@");
     }
@@ -33,6 +29,6 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
     public void devera_aparecer_uma_mensagem_informado_que_o_cadastro_foi_realizado() throws InterruptedException {
 
         Thread.sleep(1000);
-        paginaCadastro.validaMsgCadastro();
+        paginaCadastro.validaMsgCadastroSucesso();
     }
 }
