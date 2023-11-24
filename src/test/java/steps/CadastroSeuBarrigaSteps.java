@@ -18,28 +18,28 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
         cadastroPage.validaPaginaCadastro();
     }
 
-    @Quando("preencher os campos nome , email , senha e clicar no botao Cadastrar, renato")
-    public void preencher_os_campos_nome_email_senha_e_clicar_no_botao_cadastrar() {
+    @Quando("preencher os campos nome e email com dados validos, e o campo senha com dado invalido, renato")
+    public void preencher_os_campos_nome_e_email_com_dados_validos_e_o_campo_senha_com_dado_invalido_renato() {
         Random rand = new Random();
         String nome = "Renato";
         String email = "renato" + rand.nextInt() + "@teste.com";
         String senha = "123456";
 
         cadastroPage.preencherCadastro(nome, email, senha);
-
     }
-
-    @Quando("preencher os campos nome e email, deixar o campo senha em branco e clicar no botao Cadastrar, renato")
-    public void preencher_os_campos_nome_e_email_deixar_o_campo_senha_em_branco_e_clicar_no_botao_cadastrar() {
+    @Quando("preencher os campos nome e email, deixar o campo senha em branco")
+    public void preencher_os_campos_nome_e_email_deixar_o_campo_senha_em_branco() {
         cadastroPage.preencherCadastroSemSenha("Renato", "testando@testesemsenha.com");
     }
-    @Entao("o sistema mostrara a mensagem de erro, renato")
-    public void o_sistema_mostrara_a_mensagem_de_erro() {
-        cadastroPage.validarCadastro();
+    @Quando("clicar no botao Cadastrar, renato")
+    public void clicar_no_botao_cadastrar_renato() {
+       cadastroPage.clicarBtnCadastrar();
     }
+
     @Entao("o sistema mostrara a mensagem {string}, renato")
     public void o_sistema_mostrara_a_mensagem_renato(String _text) {
-        cadastroPage.validarErroDoCadastro();
+        String msgDaTela = cadastroPage.pegarMensagem();
+        Assert.assertEquals(_text, msgDaTela);
     }
 
 }
