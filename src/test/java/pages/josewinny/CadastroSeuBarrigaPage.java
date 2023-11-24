@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import runner.base_class.BasePage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,7 +16,7 @@ public class CadastroSeuBarrigaPage extends BasePage {
     private By inputSenha = By.id("senha");
     private By btnCadastrar = By.className("btn");
     private By textNotificacao = By.cssSelector("div[role='alert']");
-    private List<String> todasMensagemDeNotificacao;
+    private ArrayList<String> todasMensagemDeNotificacao = new ArrayList<String>();
 
     public void abrir() {
         driver.get(url);
@@ -33,7 +34,7 @@ public class CadastroSeuBarrigaPage extends BasePage {
         driver.findElement(inputSenha).sendKeys(_senha);
     }
 
-    public void clicarCadatro() {
+    public void clicarCadastro() {
         driver.findElement(btnCadastrar).click();
     }
 
