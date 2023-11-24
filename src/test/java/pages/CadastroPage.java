@@ -34,10 +34,10 @@ public class CadastroPage extends BasePage {
         driver.findElement(btnCadastrar).click();
     }
     public void validarCadastro() {
-        String _mensagem = driver.findElement(mensagem).getText();
-        Assert.assertFalse(_mensagem.equals("Usuário inserido com sucesso"));
+        Assert.assertFalse(driver.findElement(mensagem).getText().equals("Usuário inserido com sucesso"));
     }
     public void validarErroDoCadastro(){
-        Assert.assertTrue(driver.findElement(mensagem).equals("Senha é um campo obrigatório"));
+        Assert.assertTrue(driver.findElement(mensagem).getText().equals("Senha é um campo obrigatório"));
     }
+
 }
