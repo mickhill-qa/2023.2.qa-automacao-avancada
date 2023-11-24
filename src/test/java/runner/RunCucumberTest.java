@@ -40,12 +40,10 @@ import java.util.List;
 public class RunCucumberTest {
     @AfterClass
     public static void AfterAllTest() {
-
         // Report-Builder
         List<Object> cucumberJsonReports = new ArrayList<>();
         ReportBuilder reportBuilder = new ReportBuilder();
         String dataReport = (new SimpleDateFormat("MMM dd, yyyy (EEE) | HH:mm:ss zzz")).format(new Date());
-
         cucumberJsonReports.add(new File("target/cucumber/index.json"));
         reportBuilder.setReportDirectory("target/cucumber/report-builder/");
         reportBuilder.setReportFileName("index");
