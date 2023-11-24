@@ -20,7 +20,10 @@ public class BaseSteps {
 
     public static void closeBrownser() {
         if (browser == null) return;
-        browser.quit();
+        try {
+            browser.quit();
+            browser.close();
+        } catch (Exception e) {}
         browser = null;
     }
 
