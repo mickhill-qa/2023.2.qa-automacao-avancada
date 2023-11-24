@@ -29,9 +29,18 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
         screenshot();
     }
 
+    @Quando("o usuario preeche campos obrigatorios com dados validos informando email vinculado a outra conta")
+    public void o_usuario_preenche_o_campo_nome_com_dados_validos_informando_email_vinculado_a_outra_conta( ){
+        cadastroSeuBarriga.escreverNome("Teste");
+        cadastroSeuBarriga.escreverEmail("ixiar7774@uorak.com");
+        cadastroSeuBarriga.escreverSenha("teste1234");
+        screenshot();
+    }
+
     @E("o usuario clica no botao Cadastrar")
     public void o_usuario_clica_no_botao_Cadastrar() {
         cadastroSeuBarriga.submitFormulario();
+
     }
 
     @Entao("o sistema redireciona o usuario para a tela de login")
