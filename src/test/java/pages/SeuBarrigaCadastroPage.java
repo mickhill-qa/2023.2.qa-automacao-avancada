@@ -9,7 +9,7 @@ public class SeuBarrigaCadastroPage extends BasePage {
     private By emailField = By.id("email");
     private By passwordField = By.id("senha");
     private By cadastrarButton = By.xpath("//input[@value='Cadastrar']");
-
+    private By textMessage = By.cssSelector("");
     //metodos de ações
     public void preencherNome(String nome){
         driver.findElement(nameField).sendKeys(nome);
