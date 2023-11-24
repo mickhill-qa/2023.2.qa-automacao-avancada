@@ -8,8 +8,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MickHillSrBarrigaCadastroSteps extends BaseSteps {
+    /**
+     * Pagina usadas nos testes
+     * */
     MickHillSrBarrigaCadastroPage paginaCadastro = new MickHillSrBarrigaCadastroPage();
 
+    /**
+     * Fluxo Base
+     * */
     @Dado("que o usuario esta na tela de cadastro, mickhill")
     public void que_o_usuario_esta_na_tela_de_cadastro() {
         paginaCadastro.abrir();
@@ -36,7 +42,7 @@ public class MickHillSrBarrigaCadastroSteps extends BaseSteps {
         screenshot();
     }
 
-    @Quando("o usuario clica em Cadastrar, mickhill")
+    @E("o usuario clica em Cadastrar, mickhill")
     public void o_usuario_clica_em_cadastrar() {
         paginaCadastro.clicarCadatro();
     }
@@ -46,5 +52,13 @@ public class MickHillSrBarrigaCadastroSteps extends BaseSteps {
         String msgTela = paginaCadastro.pegarNotificacao();
         Assert.assertEquals(_mensagem, msgTela);
         screenshot();
+    }
+
+    /**
+     * Fluxo Alternativo
+     * */
+    @E("o usuario pressiona ENTER no teclado, mickhill")
+    public void o_usuario_pressiona_enter_no_teclado_mickhill() {
+        paginaCadastro.pressEnter();
     }
 }
