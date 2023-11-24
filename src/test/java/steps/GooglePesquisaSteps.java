@@ -24,8 +24,9 @@ public class GooglePesquisaSteps extends BaseSteps {
         screenshot();
     }
 
-    @Quando("o usuario clica no botao PESQUISAR")
+    @E("o usuario clica no botao PESQUISAR")
     public void o_usuario_clica_no_botao_pesquisar() {
+        paginaPesquisa.fecharDrodownPesquisa();
         paginaPesquisa.clicarBtnPesquisar();
     }
 
