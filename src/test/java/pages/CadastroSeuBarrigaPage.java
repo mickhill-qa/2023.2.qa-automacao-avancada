@@ -2,11 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
+import runner.support.Actions;
 
 import static runner.base_class.BaseSteps.screenshot;
 
-public class CadastroSeuBarrigaPage extends BasePage {
-
+public class CadastroSeuBarrigaPage extends Actions {
+    private  String url = "https://seubarriga.wcaquino.me/cadastro";
     private By fieldNome = By.id("nome");
     private By fieldEmail = By.id("email");
     private By fieldSenha = By.id("senha");
@@ -14,27 +15,27 @@ public class CadastroSeuBarrigaPage extends BasePage {
     private By validaMessage = By.className("alert");
 
     public void validaTelaCadastro(){
-        driver.get("https://seubarriga.wcaquino.me/cadastro");
+        get(url);
         screenshot();
     }
     public void cadastrarSucesso(String nome, String email, String senha){
-        driver.findElement(fieldNome).sendKeys(nome);
-        driver.findElement(fieldEmail).sendKeys(email);
-        driver.findElement(fieldSenha).sendKeys(senha);
+        set(fieldNome, nome);
+        set(fieldEmail, email);
+        set(fieldSenha, senha);
         screenshot();
-        driver.findElement(btnCadastrar).click();
+        click(btnCadastrar);
     }
 
     public void cadastrarSeuBarriga(String nome, String email, String senha){
-        driver.findElement(fieldNome).sendKeys(nome);
-        driver.findElement(fieldEmail).sendKeys(email);
-        driver.findElement(fieldSenha).sendKeys(senha);
+        set(fieldNome, nome);
+        set(fieldEmail, email);
+        set(fieldSenha, senha);
         screenshot();
-        driver.findElement(btnCadastrar).click();
+        click(btnCadastrar);
     }
 
     public String messageValidation(String message){
-        message = driver.findElement(validaMessage).getText();
+        get_text(validaMessage, message);
         return message;
     }
 
