@@ -19,11 +19,13 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
     @Quando("preencher os campos nome , email , senha e clicar no botao Cadastrar")
     public void preencher_os_campos_nome_email_senha_e_clicar_no_botao_cadastrar() {
         Random rand = new Random();
+        String nome = "Renato";
         String email = "renato" + rand.nextInt() + "@teste.com";
-        cadastroPage.preencherCadastro("Renato", email, "1234");
-        cadastroPage.clicarBtnCadastrar();
-    }
+        String senha = "123456";
 
+        cadastroPage.preencherCadastro(nome, email, senha);
+
+    }
     @Entao("o sistema mostrara a mensagem de erro")
     public void o_sistema_mostrara_a_mensagem_de_erro() {
         cadastroPage.validarCadastro();
@@ -31,8 +33,6 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
 
     @Quando("preencher os campos nome e email, deixar o campo senha em branco e clicar no botao Cadastrar")
     public void preencher_os_campos_nome_e_email_deixar_o_campo_senha_em_branco_e_clicar_no_botao_cadastrar() {
-        cadastroPage.preencherCadastroSemSenha("Renato", "testando@testapraver.com");
-        cadastroPage.clicarBtnCadastrar();
+        cadastroPage.preencherCadastroSemSenha("Renato", "testando@testesemsenha.com");
     }
-
 }

@@ -7,6 +7,9 @@ import runner.base_class.BasePage;
 import steps.CadastroSeuBarrigaSteps;
 import steps.Hooks;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+
 public class CadastroPage extends BasePage {
 
     private By btnNovoUsuario = By.xpath("//*[@id=bs-example-navbar-collapse-1]/ul/li[2]/a");
@@ -19,22 +22,17 @@ public class CadastroPage extends BasePage {
     public void validaPaginaCadastro() {
         driver.get("https://seubarriga.wcaquino.me/cadastro");
     }
-
     public void preencherCadastro(String _nome, String _email, String _senha) {
         driver.findElement(campo_nome).sendKeys(_nome);
         driver.findElement(campo_email).sendKeys(_email);
         driver.findElement(campo_senha).sendKeys(_senha);
+        driver.findElement(btnCadastrar).click();
     }
-
     public void preencherCadastroSemSenha(String _nome, String _email){
         driver.findElement(campo_nome).sendKeys(_nome);
         driver.findElement(campo_email).sendKeys(_email);
-    }
-
-    public void clicarBtnCadastrar() {
         driver.findElement(btnCadastrar).click();
     }
-
     public void validarCadastro() {
         String _mensagem = driver.findElement(mensagem).getText();
         Assert.assertFalse(_mensagem.equals("Usuário inserido com sucesso"));
