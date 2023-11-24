@@ -15,9 +15,9 @@ public class CadastroSEuBarrigaSteps extends Utils {
         seuBarrigaPage.validaTelaCadastro();
     }
 
-    @Quando("o usuario preencher os campos {string}, {string}, {string} e clicar em Cadastrar")
+    @Quando("o usuario preencher os campos {string}, {string} e {string}")
     public void o_usuario_preencher_os_campos_e_clicar_em_cadastrar_com_sucesso(String nome, String email, String senha) {
-        seuBarrigaPage.cadastrarSucesso(nomeRandom(nome), emailRandom(email), senhaRandom(senha));
+        seuBarrigaPage.cadastrarSucesso(nomeRandom(), emailRandom(), senhaRandom());
     }
 
     @Entao("o sistema mostrarar a mensagem {string}")
