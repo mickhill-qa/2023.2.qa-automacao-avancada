@@ -17,6 +17,7 @@ public class CadastroSeuBarrigaPage extends BasePage {
 
     public void validaTelaCadastro(){
         driver.get("https://seubarriga.wcaquino.me/cadastro");
+        screenshot();
     }
     public void cadastrarSucesso(String nome, String email, String senha){
         nome = "Teste Automation" + random.nextInt();
