@@ -1,10 +1,11 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
 import java.util.Random;
+
+import static runner.base_class.BaseSteps.screenshot;
 
 public class CadastroSeuBarrigaPage extends BasePage {
     Random random = new Random();
@@ -25,6 +26,7 @@ public class CadastroSeuBarrigaPage extends BasePage {
         driver.findElement(fieldNome).sendKeys(nome);
         driver.findElement(fieldEmail).sendKeys(email);
         driver.findElement(fieldSenha).sendKeys(senha);
+        screenshot();
         driver.findElement(btnCadastrar).click();
     }
 
@@ -32,12 +34,13 @@ public class CadastroSeuBarrigaPage extends BasePage {
         driver.findElement(fieldNome).sendKeys(nome);
         driver.findElement(fieldEmail).sendKeys(email);
         driver.findElement(fieldSenha).sendKeys(senha);
+        screenshot();
         driver.findElement(btnCadastrar).click();
     }
 
-    public void messageValidation(String message){
-        String text = driver.findElement(validaMessage).getText();
-        Assert.assertEquals(text, message);
+    public String messageValidation(String message){
+        message = driver.findElement(validaMessage).getText();
+        return message;
     }
 
 }

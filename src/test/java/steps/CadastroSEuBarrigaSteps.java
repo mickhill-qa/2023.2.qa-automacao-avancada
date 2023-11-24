@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import org.junit.Assert;
 import pages.CadastroSeuBarrigaPage;
 import runner.base_class.BaseSteps;
 
@@ -20,7 +21,11 @@ public class CadastroSEuBarrigaSteps extends BaseSteps {
     }
 
     @Entao("o sistema mostrarar a mensagem {string}")
-    public void o_sistema_mostrarar_a_mensagem(String message) { seuBarrigaPage.messageValidation(message); }
+    public void o_sistema_mostrarar_a_mensagem(String message) {
+        String text = seuBarrigaPage.messageValidation(message);
+        Assert.assertEquals(text, message);
+        screenshot();
+    }
 
     @Quando("preencher os campos {string}, {string}, {string} e clicar em Cadastrar")
     public void preencher_os_campos_e_clicar_em_cadastrar(String nome, String email, String senha) {
@@ -28,7 +33,9 @@ public class CadastroSEuBarrigaSteps extends BaseSteps {
     }
     @Entao("o sistema mostrara a {string}")
     public void o_sistema_mostrara_a(String message) {
-        seuBarrigaPage.messageValidation(message);
+        String text = seuBarrigaPage.messageValidation(message);
+        Assert.assertEquals(text, message);
+        screenshot();
     }
 
 }
