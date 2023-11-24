@@ -1,4 +1,4 @@
-package josewinny.pages;
+package pages.josewinny;
 
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
