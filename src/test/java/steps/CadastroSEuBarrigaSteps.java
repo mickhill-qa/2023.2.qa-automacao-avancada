@@ -8,8 +8,7 @@ import pages.CadastroSeuBarrigaPage;
 import runner.base_class.BaseSteps;
 import runner.support.Utils;
 
-public class CadastroSEuBarrigaSteps extends BaseSteps {
-    Utils utils = new Utils();
+public class CadastroSEuBarrigaSteps extends Utils {
     CadastroSeuBarrigaPage seuBarrigaPage = new CadastroSeuBarrigaPage();
     @Dado("que o usuario esteja na tela de Cadastro")
     public void que_o_usuario_esteja_na_tela_de_cadastro() {
@@ -18,7 +17,7 @@ public class CadastroSEuBarrigaSteps extends BaseSteps {
 
     @Quando("o usuario preencher os campos {string}, {string}, {string} e clicar em Cadastrar")
     public void o_usuario_preencher_os_campos_e_clicar_em_cadastrar_com_sucesso(String nome, String email, String senha) {
-        seuBarrigaPage.cadastrarSucesso(utils.nomeRandom(nome), utils.emailRandom(email), utils.senhaRandom(senha));
+        seuBarrigaPage.cadastrarSucesso(nomeRandom(nome), emailRandom(email), senhaRandom(senha));
     }
 
     @Entao("o sistema mostrarar a mensagem {string}")

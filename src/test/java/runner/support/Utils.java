@@ -1,8 +1,11 @@
 package runner.support;
 
+import runner.base_class.BasePage;
+import runner.base_class.BaseSteps;
+
 import java.util.Random;
 
-public class Utils{
+public class Utils extends BaseSteps {
     Random random = new Random();
     public String nomeRandom(String nome){
         nome = "Teste Automation" + random.nextInt();
