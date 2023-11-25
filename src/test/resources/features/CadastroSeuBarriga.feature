@@ -1,17 +1,17 @@
 #language: pt
-
 Funcionalidade: Cadastro
   Como usuario do site https://seubarriga.wcaquino.me/cadastro
   Quero realizar o cadastro na plataforma
-  Para ter acesso aos recursos disponíveis
+  Para ter acesso aos recursos disponiveis
 
-  Esquema do Cenario: Cadastro "<fluxo>"
-    Dado que o usuario esteja na tela de cadastro
-    Quando preencher os campos "<nome>", "<email>", "<senha>" e clicar no botao Cadastrar
-    Entao o sistema mostrara a "<mensagem>"
+  Cenario: Cadastro de Usuario com Sucesso
+    Dado que o usuario esta na tela de cadastro
+    Quando o usuario preenche os campos obrigatorios com dados validos
+    E o usuario clica no botao Cadastrar
+    Então sera apresentada a mensagem "Usuário inserido com sucesso"
 
-    Exemplos:
-      | nome          | email                | senha    | mensagem                     | fluxo                   |
-      | Edinete Sousa | edinetebs@gmail.com  | 23456789 | Usuário inserido com Sucesso | Senha apenas numerica   |
-      | Edinete Sousa | edinete.bs@gmail.com | asdfghjk | Usuário inserido com Sucesso | Senha apenas com letras |
-      | Edinete Sousa | edineteb.s@gmail.com |          | Senha é um campo obrigatório | Senha vazia             |
+  Cenario: Cadastro de Usuario com Invalido
+    Dado que o usuario esta na tela de cadastro
+    Quando o usuario preenche os campos obrigatorios com dados invalidos
+    E o usuario clica no botao Cadastrar
+    Então sera apresentada a mensagem "Usuário inválido"
