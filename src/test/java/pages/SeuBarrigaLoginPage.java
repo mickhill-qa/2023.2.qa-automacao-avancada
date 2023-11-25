@@ -3,23 +3,19 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class SeuBarrigaCadastroPage extends BasePage {
+public class SeuBarrigaLoginPage extends BasePage {
 
-    private String url = "https://seubarriga.wcaquino.me/cadastro";
-    private By inputNome = By.id("nome");
+    private String url2 = "https://seubarriga.wcaquino.me/login";
+
     private By inputEmail = By.id("email");
     private By inputSenha = By.id("senha");
-    private By btnCadastrar = By.cssSelector("input[value='Cadastrar']");
+
+    private By btnEntrar = By.cssSelector("body > div.jumbotron.col-lg-4 > form > button");
 
     private By textNotificacao = By.cssSelector("div[role='alert']");
 
     public void open() {
-        driver.get(url);
-    }
-
-
-    public void preNome(String _nome) {
-        driver.findElement(inputNome).sendKeys(_nome);
+        driver.get(url2);
     }
 
     public void preEmail(String _email) {
@@ -30,10 +26,9 @@ public class SeuBarrigaCadastroPage extends BasePage {
         driver.findElement(inputSenha).sendKeys(_senha);
     }
 
-    public void clicarCadastro() {
-        driver.findElement(btnCadastrar).click();
+    public void clicarLogin() {
+        driver.findElement(btnEntrar).click();
     }
-
 
     public String pegarNotificacao() {
         waitElementVisible(textNotificacao, 5);
