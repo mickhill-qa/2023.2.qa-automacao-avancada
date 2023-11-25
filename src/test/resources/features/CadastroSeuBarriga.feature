@@ -4,7 +4,7 @@ Funcionalidade: Cadastro
   Quero realizar o cadastro na plataforma
   Para ter acesso aos recursos disponíveis
 
-  Esquema do Cenario: Testes de cadastro
+  Esquema do Cenario: Testes de cadastro - EXCECAO
     Dado que o usuario esteja na tela de cadastros
     Quando o usuario preencher os campos "<nome>", "<email>", "<senha>" e clicar em cadastrar
     Entao o sistema mostrara a "<mensagem>"
