@@ -6,6 +6,7 @@ import runner.base_class.BasePage;
 public class SeuBarrigaCadastroPage extends BasePage {
 
     private String url = "https://seubarriga.wcaquino.me/cadastro";
+
     private By inputNome = By.id("nome");
     private By inputEmail = By.id("email");
     private By inputSenha = By.id("senha");
@@ -16,7 +17,6 @@ public class SeuBarrigaCadastroPage extends BasePage {
     public void open() {
         driver.get(url);
     }
-
 
     public void preNome(String _nome) {
         driver.findElement(inputNome).sendKeys(_nome);

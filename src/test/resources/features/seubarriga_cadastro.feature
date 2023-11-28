@@ -7,4 +7,10 @@
       E o usuario clica em Cadastrar
       Então a pagina informa a mensagem "Usuário inserido com sucesso"
 
+    Cenario: Cadastro Sem Senha
+      Dado que o usuario acessa a pagina de cadastro
+      Quando o usuario preenche o campo nome e campo email
+      E o usuario clica em Cadastrar
+      Então a pagina informa a mensagem "Senha é um campo obrigatório"
+
 
