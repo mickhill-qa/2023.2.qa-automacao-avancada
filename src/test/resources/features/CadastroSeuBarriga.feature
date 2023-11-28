@@ -7,17 +7,20 @@ Funcionalidade: Cadastro
 
   Cenario: Cadastro com Sucesso
     Dado que o usuario esteja na tela de Cadastro
-    Quando o usuario preencher os campos "<nome>", "<email>" e "<senha>"
+    Quando o usuario preenche os dados necessarios para o cadastro com sucesso
     Entao o sistema mostrarar a mensagem "Usuário inserido com sucesso"
 
-
-  Esquema do Cenario: Testes dos campos de Cadastros
+  Cenario: Cadastro com campo Nome em branco
     Dado que o usuario esteja na tela de Cadastro
-    Quando preencher os campos "<nome>", "<email>", "<senha>" e clicar em Cadastrar
-    Entao o sistema mostrara a "<mensagem>"
+    Quando o usuario preenche os campos Email e Senha e deixa o campo Nome em branco
+    Entao o sistema mostrarar a mensagem "Nome é um campo obrigatório"
 
-    Exemplos:
-      | nome             | email           | senha  | mensagem                     |
-      |                  | teste@teste.com | 123456 | Nome é um campo obrigatório  |
-      | Teste Automation |                 | 123456 | Email é um campo obrigatório |
-      | Teste Automation | teste@teste.com |        | Senha é um campo obrigatório |
+  Cenario: Cadastro com campo Email em branco
+    Dado que o usuario esteja na tela de Cadastro
+    Quando o usuario preenche os campos Nome e Senha e deixa o Email nome em branco
+    Entao o sistema mostrarar a mensagem "Email é um campo obrigatório"
+
+  Cenario: Cadastro com campo Senha em branco
+    Dado que o usuario esteja na tela de Cadastro
+    Quando o usuario preenche os campos Nome e Email e deixa o campo Senha nome em branco
+    Entao o sistema mostrarar a mensagem "Senha é um campo obrigatório"

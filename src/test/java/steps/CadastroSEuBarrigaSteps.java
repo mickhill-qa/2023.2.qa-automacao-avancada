@@ -15,9 +15,24 @@ public class CadastroSEuBarrigaSteps extends Utils {
         seuBarrigaPage.validaTelaCadastro();
     }
 
-    @Quando("o usuario preencher os campos {string}, {string} e {string}")
-    public void o_usuario_preencher_os_campos_e_clicar_em_cadastrar_com_sucesso(String nome, String email, String senha) {
-        seuBarrigaPage.cadastrarSucesso(nomeRandom(), emailRandom(), senhaRandom());
+    @Quando("o usuario preenche os dados necessarios para o cadastro com sucesso")
+    public void o_usuario_preenche_os_dados_necessarios_para_o_cadastro_com_sucesso() {
+        seuBarrigaPage.cadastrarSeuBarriga(nomeRandom(), emailRandom(), senhaRandom());
+    }
+
+    @Quando("o usuario preenche os campos Email e Senha e deixa o campo Nome em branco")
+    public void o_usuario_preenche_os_campos_email_e_senha_e_deixa_o_campo_nome_em_branco() {
+        seuBarrigaPage.cadastrarSeuBarriga(null, emailRandom(), senhaRandom());
+    }
+
+    @Quando("o usuario preenche os campos Nome e Senha e deixa o Email nome em branco")
+    public void o_usuario_preenche_os_campos_nome_e_senha_e_deixa_o_email_nome_em_branco() {
+        seuBarrigaPage.cadastrarSeuBarriga(nomeRandom(), null, senhaRandom());
+    }
+
+    @Quando("o usuario preenche os campos Nome e Email e deixa o campo Senha nome em branco")
+    public void o_usuario_preenche_os_campos_nome_e_email_e_deixa_o_senha_nome_em_branco() {
+        seuBarrigaPage.cadastrarSeuBarriga(nomeRandom(), emailRandom(), null);
     }
 
     @Entao("o sistema mostrarar a mensagem {string}")
@@ -25,17 +40,9 @@ public class CadastroSEuBarrigaSteps extends Utils {
         String text = seuBarrigaPage.messageValidation(message);
         Assert.assertEquals(text, message);
         screenshot();
+        System.out.println(text);
     }
 
-    @Quando("preencher os campos {string}, {string}, {string} e clicar em Cadastrar")
-    public void preencher_os_campos_e_clicar_em_cadastrar(String nome, String email, String senha) {
-        seuBarrigaPage.cadastrarSeuBarriga(nome, email, senha);
-    }
-    @Entao("o sistema mostrara a {string}")
-    public void o_sistema_mostrara_a(String message) {
-        String text = seuBarrigaPage.messageValidation(message);
-        Assert.assertEquals(text, message);
-        screenshot();
-    }
+
 
 }

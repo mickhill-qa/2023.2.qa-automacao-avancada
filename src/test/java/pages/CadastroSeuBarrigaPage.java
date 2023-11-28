@@ -18,18 +18,16 @@ public class CadastroSeuBarrigaPage extends Actions {
         get(url);
         screenshot();
     }
-    public void cadastrarSucesso(String nome, String email, String senha){
-        set(fieldNome, nome);
-        set(fieldEmail, email);
-        set(fieldSenha, senha);
-        screenshot();
-        click(btnCadastrar);
-    }
-
-    public void cadastrarSeuBarriga(String nome, String email, String senha){
-        set(fieldNome, nome);
-        set(fieldEmail, email);
-        set(fieldSenha, senha);
+    public void cadastrarSeuBarriga(String nome, String email, String senha) {
+        if (nome != null) {
+            set(fieldNome, nome);
+        }
+        if ( email != null) {
+            set(fieldEmail, email);
+        }
+        if (senha != null) {
+            set(fieldSenha, senha);
+        }
         screenshot();
         click(btnCadastrar);
     }
