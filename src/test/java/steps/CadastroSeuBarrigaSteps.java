@@ -7,8 +7,6 @@ import runner.base_class.BaseSteps;
 
 public class CadastroSeuBarrigaSteps extends BaseSteps {
     CadastroPage paginaCadastro = new CadastroPage();
-    CadastroPage validaMensagem = new CadastroPage();
-
     @Dado("que o usuario esta na tela de cadastro")
     public void que_o_usuario_esta_na_tela_de_cadastro() {
         paginaCadastro.validaPaginaCadastro();
@@ -34,7 +32,7 @@ public class CadastroSeuBarrigaSteps extends BaseSteps {
     }
     @Então("sera apresentada a mensagem {string}")
     public void sera_apresentada_a_mensagem(String mensagem) {
-        validaMensagem.validarMensagem();
+        paginaCadastro.validarMensagem();
         screenshot();
     }
 }
