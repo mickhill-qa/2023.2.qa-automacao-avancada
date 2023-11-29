@@ -42,5 +42,24 @@ git checkout -b feature/<aluno>/recuperacao
         1. Steps da feature no arquivo: CadastroSeuBarrigaSteps.java
         1. Pages/Páginas do site no Pacote/Package: pages
         1. Repositorio de entrega: https://github.com/mickhill-qa/2023.2.qa-automacao-avancada
+        1. Entregar com um pull-request;
+        1. Entregar até 24/11/2023;
+
+---
+2. Atividade de automacao
+
+   - Elebora em Gherkin/BDD os 3 cenaios de testes do documento:
+
+      - Requisito: [Documento PDF](Quality_Assurance_-_Test_Automation_Assessment.pdf)
+
+   - Entrega:
+      1. Scripts de teste no arquivo: 
+         - login.feature
+         - invoice_details.feature
+      1. Steps da feature no arquivo:
+         - InvoiceDetailsSteps.java
+         - LoginSteps.java
+      1. Pages/Páginas do site no Pacote/Package: pages
+      1. Repositorio de entrega: https://github.com/mickhill-qa/2023.2.qa-automacao-avancada
       1. Entregar com um pull-request;
-      1. Entregar até 24/11/2023;
+      1. Entregar até 01/12/2023;

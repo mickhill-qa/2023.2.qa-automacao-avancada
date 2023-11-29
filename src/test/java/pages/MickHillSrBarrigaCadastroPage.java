@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import runner.base_class.BasePage;
 
 public class MickHillSrBarrigaCadastroPage extends BasePage {
@@ -29,6 +30,10 @@ public class MickHillSrBarrigaCadastroPage extends BasePage {
 
     public void clicarCadatro() {
         driver.findElement(btnCadastrar).click();
+    }
+
+    public void pressEnter() {
+        actions.sendKeys(Keys.ENTER).perform();
     }
 
     public String pegarNotificacao() {
