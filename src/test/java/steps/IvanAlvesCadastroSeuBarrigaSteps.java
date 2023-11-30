@@ -3,10 +3,10 @@ package steps;
 import org.junit.Assert;
 import io.cucumber.java.pt.*;
 import runner.base_class.BaseSteps;
-import pages.CadastroSeuBarrigaPage;
-public class CadastroUserSeuBarrigaSteps  extends BaseSteps {
+import pages.IvanAlvesCadastroSeuBarrigaPage;
+public class IvanAlvesCadastroSeuBarrigaSteps  extends BaseSteps {
 	
-	CadastroSeuBarrigaPage cadastro = new CadastroSeuBarrigaPage();
+	IvanAlvesCadastroSeuBarrigaPage cadastro = new IvanAlvesCadastroSeuBarrigaPage();
 	
 	@Dado("que estou acessando a acessando página de cadastro do seubarriga.wcaquino.me")
 	public void que_estou_acessando_a_acessando_página_de_cadastro_do_seubarriga_wcaquino_me() {

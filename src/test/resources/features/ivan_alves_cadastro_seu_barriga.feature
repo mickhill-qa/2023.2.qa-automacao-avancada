@@ -1,5 +1,5 @@
 #language: pt
-Funcionalidade: Cadastro de Usuario
+Funcionalidade: Ivan_Alves - Cadastro de Usuario
 
     Cenario: Cadastrar usuário com sucesso - nome, email e senha válidos
         Dado que estou acessando a acessando página de cadastro do seubarriga.wcaquino.me

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 import runner.base_class.BasePage;
 
-public class CadastroSeuBarrigaPage extends BasePage {
+public class IvanAlvesCadastroSeuBarrigaPage extends BasePage {
 	
 	private String url = "https://seubarriga.wcaquino.me/cadastro";
 	private By inputNome= By.id("nome");
