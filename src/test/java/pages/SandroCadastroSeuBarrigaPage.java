@@ -1,12 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
-import runner.base_class.BasePage;
 import runner.support.Actions;
 
 import static runner.base_class.BaseSteps.screenshot;
 
-public class CadastroSeuBarrigaPage extends Actions {
+public class SandroCadastroSeuBarrigaPage extends Actions {
     private  String url = "https://seubarriga.wcaquino.me/cadastro";
     private By fieldNome = By.id("nome");
     private By fieldEmail = By.id("email");

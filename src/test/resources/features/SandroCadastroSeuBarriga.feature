@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: Cadastro
+Funcionalidade: Sandro - Cadastro Seu Barriga
   Como usuário do site "https://seubarriga.wcaquino.me/"
   Quero realizar o cadastro na plataforma
   Para ter acesso aos recursos disponíveis

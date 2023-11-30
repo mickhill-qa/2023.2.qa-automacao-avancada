@@ -4,12 +4,11 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
-import pages.CadastroSeuBarrigaPage;
-import runner.base_class.BaseSteps;
+import pages.SandroCadastroSeuBarrigaPage;
 import runner.support.Utils;
 
-public class CadastroSEuBarrigaSteps extends Utils {
-    CadastroSeuBarrigaPage seuBarrigaPage = new CadastroSeuBarrigaPage();
+public class SandroCadastroSeuBarrigaSteps extends Utils {
+    SandroCadastroSeuBarrigaPage seuBarrigaPage = new SandroCadastroSeuBarrigaPage();
     @Dado("que o usuario esteja na tela de Cadastro")
     public void que_o_usuario_esteja_na_tela_de_cadastro() {
         seuBarrigaPage.validaTelaCadastro();
