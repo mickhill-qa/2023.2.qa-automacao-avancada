@@ -1,5 +1,5 @@
 #language: pt
-Funcionalidade: Seu Barriga Cadastro
+Funcionalidade: Diego - Seu Barriga Cadastro
     Para que eu tenha acesso ao sistema do Seu barriga
     Sendo um inquilino do seu Barriga
     Posso realizar um cadastro utilizando Nome, Email e Senha

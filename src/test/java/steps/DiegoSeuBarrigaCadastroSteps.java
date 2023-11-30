@@ -4,12 +4,12 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
-import pages.SeuBarrigaCadastroPage;
+import pages.DiegoSeuBarrigaCadastroPage;
 import runner.base_class.BaseSteps;
 import static runner.support.TestDataFactory.getRandomMail;
 
-public class SeuBarrigaCadastroSteps extends BaseSteps {
-    SeuBarrigaCadastroPage paginaCadastro = new SeuBarrigaCadastroPage();
+public class DiegoSeuBarrigaCadastroSteps extends BaseSteps {
+    DiegoSeuBarrigaCadastroPage paginaCadastro = new DiegoSeuBarrigaCadastroPage();
 
     @Dado("que o usuario esta na pagina de cadastro")
     public void que_o_usuario_esta_na_pagina_de_cadastro() {
