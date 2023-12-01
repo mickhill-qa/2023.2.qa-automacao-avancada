@@ -1,6 +1,8 @@
 package steps;
 
 import io.cucumber.java.pt.*;
+import org.junit.Assert;
+import pages.MickHillInvoiceListEcorePage;
 import pages.MickHillLoginEcorePage;
 import runner.base_class.BaseSteps;
 
@@ -10,6 +12,7 @@ public class MickHillEcoreLoginSteps extends BaseSteps
      * Paginas
      * */
     MickHillLoginEcorePage pageLogin = new MickHillLoginEcorePage();
+    MickHillInvoiceListEcorePage paginaListaFatura = new MickHillInvoiceListEcorePage();
 
     /**
      * Steps
@@ -29,8 +32,8 @@ public class MickHillEcoreLoginSteps extends BaseSteps
     }
 
     @Entao("o sistema redireciona para a lista de faturas")
-    public void o_sistema_redireciona_para_a_lista_de_faturas() throws InterruptedException
+    public void o_sistema_redireciona_para_a_lista_de_faturas()
     {
-        Thread.sleep(4000);
+        Assert.assertTrue(paginaListaFatura.estouAqui());
     }
 }
