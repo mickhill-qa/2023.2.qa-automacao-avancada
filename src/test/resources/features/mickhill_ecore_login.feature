@@ -8,13 +8,15 @@ Funcionalidade: Mick Hill - Ecore Login
         Gerar o CODE dos steps do script de automacao
         Mapear objetos de tela
 
-    Cenario: Login com Sucesso
+    Contexto:
         Dado que o usuario esta na pagina de autenticacao
+
+    Cenario: Login com Sucesso
         Quando o usuario prenecher as credenciais "demouser" e "abc123"
         Entao o sistema redireciona para a lista de faturas
 
+    @resetBrowser
     Esquema do Cenario: Login com Credenciais invalidas
-        Dado que o usuario esta na pagina de autenticacao
         Quando o usuario prenecher as credenciais <Username> e <Password>
         Entao o sistema mostra a mensagem de erro: "Wrong username or password."
         Exemplos:
