@@ -36,4 +36,11 @@ public class MickHillEcoreLoginSteps extends BaseSteps
     {
         Assert.assertTrue(paginaListaFatura.estouAqui());
     }
+
+    @Entao("o sistema mostra a mensagem de erro: {string}")
+    public void oSistemaMostraAMensagemDeErro(String _msgError)
+    {
+        String msgNaTela = pageLogin.pegarMensagemDeErro();
+        Assert.assertEquals(_msgError, msgNaTela);
+    }
 }

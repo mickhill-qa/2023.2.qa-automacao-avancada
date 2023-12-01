@@ -16,7 +16,7 @@ Funcionalidade: Mick Hill - Ecore Login
     Esquema do Cenario: Login com Credenciais invalidas
         Dado que o usuario esta na pagina de autenticacao
         Quando o usuario prenecher as credenciais <Username> e <Password>
-        Entao o sistema mostra a mensagem de erro: "Wrong username or password"
+        Entao o sistema mostra a mensagem de erro: "Wrong username or password."
         Exemplos:
             | Username    | Password   |
             | "Demouser"  | "abc123"   |
