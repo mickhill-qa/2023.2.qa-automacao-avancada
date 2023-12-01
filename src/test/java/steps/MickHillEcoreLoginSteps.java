@@ -23,11 +23,11 @@ public class MickHillEcoreLoginSteps extends BaseSteps
         pageLogin.abrir();
     }
 
-    @Quando("o usuario prenecher as credenciais validas")
-    public void o_usuario_prenecher_as_credenciais_validas()
+    @Quando("o usuario prenecher as credenciais {string} e {string}")
+    public void oUsuarioPrenecherAsCredenciaisE(String _username, String _password)
     {
-        pageLogin.preencherUsername("demouser");
-        pageLogin.preencherPassword("abc123");
+        pageLogin.preencherUsername(_username);
+        pageLogin.preencherPassword(_password);
         pageLogin.clicarBtnLogin();
     }
 
