@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class SeuBarrigaCadastroPage extends BasePage {
+public class AlexsandroSeuBarrigaCadastroPage extends BasePage {
 
     private String url = "https://seubarriga.wcaquino.me/cadastro";
 

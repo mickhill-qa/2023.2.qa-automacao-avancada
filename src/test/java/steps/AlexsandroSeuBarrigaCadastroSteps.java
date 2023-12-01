@@ -2,15 +2,15 @@ package steps;
 
 import io.cucumber.java.pt.*;
 import org.junit.Assert;
-import pages.SeuBarrigaCadastroPage;
+import pages.AlexsandroSeuBarrigaCadastroPage;
 import runner.base_class.BaseSteps;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class SeuBarrigaCadastroSteps extends BaseSteps {
+public class AlexsandroSeuBarrigaCadastroSteps extends BaseSteps {
 
-    SeuBarrigaCadastroPage pageCadastro = new SeuBarrigaCadastroPage();
+    AlexsandroSeuBarrigaCadastroPage pageCadastro = new AlexsandroSeuBarrigaCadastroPage();
 
     LocalDateTime myDateObj = LocalDateTime.now();
     DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
