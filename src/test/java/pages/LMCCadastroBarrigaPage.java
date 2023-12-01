@@ -33,7 +33,7 @@ public class LMCCadastroBarrigaPage extends BasePage {
     public void preencher_campos(String senha) throws InterruptedException {
         driver.findElement(campo_nome).sendKeys("John");
         Thread.sleep(1000);
-        driver.findElement(campo_email).sendKeys("lariissa334@gmail.com");
+        driver.findElement(campo_email).sendKeys("larisa334@gmail.com");
         Thread.sleep(1000);
         driver.findElement(campo_senha).sendKeys(senha);
         Thread.sleep(2000);
