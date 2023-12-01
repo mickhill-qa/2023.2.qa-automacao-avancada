@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class LoginPage extends BasePage {
+public class RenatoLoginPage extends BasePage {
 
     private By username = By.cssSelector("input[name='username']");
     private By password = By.cssSelector("input[name='password']");

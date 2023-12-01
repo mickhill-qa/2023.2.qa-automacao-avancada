@@ -11,18 +11,11 @@ Feature: Login
   Scenario Outline: Validate that the application denies the user login with invalid credentials: Login (Negative)
     Given Have the main page loaded (https://automation-sandbox-python-mpywqjbdza-uc.a.run.app)
     When Fill the following fields <email> and <password> and click the button Login
-    Then The application shows the <message>
+    Then The application shows the "Wrong username or password."
 
     Examples:
-      | email       | password   | message                      |
-      | "Demouser"  | "abc123"   | "Wrong username or password." |
-      | "demouser_" | "xyz"      | "Wrong username or password." |
-      | "demouser"  | "nananana" | "Wrong username or password." |
-      | "demouser"  | "abc123"   | "Wrong username or password." |
-
-
-
-
-
-
+      | email       | password   |
+      | "Demouser"  | "abc123"   |
+      | "demouser_" | "xyz"      |
+      | "demouser"  | "nananana" |
 

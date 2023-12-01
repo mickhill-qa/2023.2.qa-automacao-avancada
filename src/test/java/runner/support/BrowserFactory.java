@@ -16,7 +16,6 @@ public class BrowserFactory
         FIREFOX,
         FIREFOX_HEADLESS
     }
-
     public static WebDriver getBrowser() {
         String ci = System.getenv().get("PIPELINE");
         if (ci != null && ci.equals("github_actions")) {
