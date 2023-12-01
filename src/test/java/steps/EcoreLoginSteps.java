@@ -35,7 +35,7 @@ public class EcoreLoginSteps extends BaseSteps {
     }
 
     @When("the user clicks on Login")
-    public void the_user_clicks_on_login() { pageLogin.clickLogin(); }
+    public void the_user_clicks_on_login() { pageLogin.clickLogin(); screenshot();}
 
 
     @Then("the page is logged in")
