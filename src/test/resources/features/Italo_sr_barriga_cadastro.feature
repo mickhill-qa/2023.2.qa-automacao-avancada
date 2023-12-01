@@ -1,5 +1,5 @@
 #language: pt
-Funcionalidade: Cadastro usuario site Sr Barriga
+Funcionalidade: Italo/ Cadastro usuario site Sr Barriga
 
     Cenario: Email ja existente
       Dado que o usuario esta na pagina de cadastrar novo usuario no site "https://seubarriga.wcaquino.me/cadastro"
