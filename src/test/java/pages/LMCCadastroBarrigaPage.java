@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class CadastroBarrigaPage extends BasePage {
+public class LMCCadastroBarrigaPage extends BasePage {
 
     private String Url = "https://seubarriga.wcaquino.me/cadastro";
 
