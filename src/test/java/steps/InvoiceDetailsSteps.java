@@ -1,5 +1,6 @@
 package steps;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import pages.AutomationExampleInvoiceListPage;
 import pages.AutomationExampleLoginPage;
 
@@ -22,5 +23,26 @@ public class InvoiceDetailsSteps {
     }
     @Then("the system should match the data provided in the table.")
     public void the_system_should_match_the_data_provided_in_the_table() {
+        String nameHotel = invoiceListPage.getHotelName();
+        Assert.assertEquals(nameHotel, "Rendezvous Hotel");
+
+        String invoiceDate = invoiceListPage.getInvoiceDate();
+        Assert.assertEquals(invoiceDate, "Invoice Date: 14/01/2018");
+
+        String dueDate = invoiceListPage.getDueDate();
+        Assert.assertEquals(dueDate, "Due Date: 15/01/2018");
+
+        String invoiceNumber = invoiceListPage.getInvoiceNumber();
+        Assert.assertEquals(invoiceNumber, "Invoice #110 details");
+
+        String bookingCode = invoiceListPage.getBookingCode();
+        Assert.assertEquals(bookingCode,"0875");
+
+        String customerDetails = invoiceListPage.getCustomerDetails();
+        Assert.assertEquals(customerDetails, "JOHNY SMITH" + "\n" +"R2, AVENUE DU MAROC" + "\n" +"123456");
+
+
+
+
     }
 }
