@@ -66,4 +66,7 @@ public class AutomationExampleInvoiceListPage extends BasePage {
     public String getRoom(){
         return driver.findElement(room).getText();
     }
+    public String getChekin() {
+        return driver.findElement(chekIn).getText();
+    }
 }

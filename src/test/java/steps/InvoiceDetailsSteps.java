@@ -41,8 +41,7 @@ public class InvoiceDetailsSteps {
         String customerDetails = invoiceListPage.getCustomerDetails();
         Assert.assertEquals(customerDetails, "JOHNY SMITH" + "\n" +"R2, AVENUE DU MAROC" + "\n" +"123456");
 
-
-
-
+        String room = invoiceListPage.getRoom();
+        Assert.assertEquals(room, "Superior Double");
     }
 }
