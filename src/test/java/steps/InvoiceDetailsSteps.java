@@ -43,5 +43,28 @@ public class InvoiceDetailsSteps {
 
         String room = invoiceListPage.getRoom();
         Assert.assertEquals(room, "Superior Double");
+
+        String chekIn = invoiceListPage.getChekin();
+        Assert.assertEquals(chekIn,"14/01/2018");
+
+        String checkOut = invoiceListPage.getCheckout();
+        Assert.assertEquals(checkOut,"15/01/2018");
+
+        String totalStayCount = invoiceListPage.getTotalStayCount();
+        Assert.assertEquals(totalStayCount,"1");
+
+        String totalStayAmount = invoiceListPage.getTotalStayAmount();
+        Assert.assertEquals(totalStayAmount,"$150");
+
+        String depositNow = invoiceListPage.getDepositNow();
+        Assert.assertEquals(depositNow,"USD $20.90");
+
+        String taxEVAT = invoiceListPage.getTaxEVAT();
+        Assert.assertEquals(taxEVAT,"USD $19");
+
+        String totalAmount = invoiceListPage.getTotalAmount();
+        Assert.assertEquals(totalAmount,"USD $209");
+
+
     }
 }

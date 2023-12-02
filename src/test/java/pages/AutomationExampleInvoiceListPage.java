@@ -20,10 +20,10 @@ public class AutomationExampleInvoiceListPage extends BasePage {
     private By customerDetails = By.xpath("//div[contains(text(), 'JOHNY SMITH')]");
     private By room = By.cssSelector(("tr:nth-child(2) td:nth-child(2)"));
     private By chekIn = By.cssSelector(("tr:nth-child(5) td:nth-child(2)"));
-    private By chekOut = By.cssSelector(("tr:nth-child(6) td:nth-child(2)"));
+    private By checkOut = By.cssSelector(("tr:nth-child(6) td:nth-child(2)"));
     private By totalStayCount = By.cssSelector(("tr:nth-child(3) td:nth-child(2)"));
     private By totalStayAmount = By.cssSelector(("tr:nth-child(4) td:nth-child(2)"));
-    private By depositNow = By.cssSelector(("tr:nth-child(4) td:nth-child(2)"));
+    private By depositNow = By.cssSelector(("tbody:nth-child(2) tr:nth-child(1) td:nth-child(1)"));
     private By taxEVAT = By.cssSelector(("tbody:nth-child(2) tr:nth-child(1) td:nth-child(2)"));
     private By totalAmount = By.cssSelector(("tbody:nth-child(2) tr:nth-child(1) td:nth-child(3)"));
 
@@ -69,4 +69,10 @@ public class AutomationExampleInvoiceListPage extends BasePage {
     public String getChekin() {
         return driver.findElement(chekIn).getText();
     }
+    public String getCheckout() {return driver.findElement(checkOut).getText();}
+    public String getTotalStayCount() {return driver.findElement(totalStayCount).getText();}
+    public String getTotalStayAmount() {return driver.findElement(totalStayAmount).getText();}
+    public String getDepositNow() {return driver.findElement(depositNow).getText();}
+    public String getTaxEVAT() {return driver.findElement(taxEVAT).getText();}
+    public String getTotalAmount() {return driver.findElement(totalAmount).getText();}
 }
