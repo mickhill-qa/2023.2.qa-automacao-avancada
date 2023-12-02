@@ -82,6 +82,19 @@ public class Actions extends BasePage {
             System.out.println("Não encontrou o " + text);
         }
     }
+
+    public String get_text_index(By element, int index){
+        String text = null;
+        try {
+            waitElementsVisible(element, 10);
+            text = driver.findElements(element).get(index).getText();
+            System.out.println("Visualizou a mensagem " + text);
+        } catch (Exception erro) {
+            System.out.println("Não visualizou a mensagem " + text);
+        }
+        return text;
+    }
+
     public String get_text(By element){
         String text = null;
         try {
