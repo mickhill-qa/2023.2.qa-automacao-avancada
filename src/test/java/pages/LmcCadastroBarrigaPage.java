@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class LMCCadastroBarrigaPage extends BasePage {
+public class LmcCadastroBarrigaPage extends BasePage {
 
     private String Url = "https://seubarriga.wcaquino.me/cadastro";
 
@@ -33,7 +33,7 @@ public class LMCCadastroBarrigaPage extends BasePage {
     public void preencher_campos(String senha) throws InterruptedException {
         driver.findElement(campo_nome).sendKeys("John");
         Thread.sleep(1000);
-        driver.findElement(campo_email).sendKeys("lariissa334@gmail.com");
+        driver.findElement(campo_email).sendKeys("lariisaa4425334@gmail.com");
         Thread.sleep(1000);
         driver.findElement(campo_senha).sendKeys(senha);
         Thread.sleep(2000);

@@ -4,12 +4,12 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
-import pages.LMCCadastroBarrigaPage;
+import pages.LmcCadastroBarrigaPage;
 import runner.base_class.BaseSteps;
 
-public class LMCCadastroSeuBarrigaSteps extends BaseSteps {
+public class LmcCadastroSeuBarrigaSteps extends BaseSteps {
 
-    LMCCadastroBarrigaPage page = new LMCCadastroBarrigaPage();
+    LmcCadastroBarrigaPage page = new LmcCadastroBarrigaPage();
 
     @Dado("que o usuario acesse a pagina")
     public void que_o_usuario_acesse_a_pagina() throws InterruptedException {
