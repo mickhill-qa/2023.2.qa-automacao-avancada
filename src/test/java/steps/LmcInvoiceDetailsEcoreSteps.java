@@ -35,5 +35,6 @@ public class LmcInvoiceDetailsEcoreSteps extends BaseSteps {
         Assert.assertTrue(ide2.depositNOW());
         Assert.assertTrue(ide2.tax_vat());
         Assert.assertTrue(ide2.totalAmount());
+        screenshot();
     }
 }
