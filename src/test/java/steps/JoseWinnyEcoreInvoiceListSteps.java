@@ -24,66 +24,80 @@ public class JoseWinnyEcoreInvoiceListSteps extends BaseSteps {
 
     @Então("o sistema exibe a pagina Invoice Details")
     public void oSistemaExibeAPaginaInvoiceDetails() {
-
+        invoiceListPage.mudarAba();
         invoiceDetailsPage.validarMudancaDePagina();
     }
 
     @E("a pagina Invoice Details exibe o campo Hotel Name com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoHotelNameCom(String _nome) {
+    public void aPaginaInvoiceDetailsExibeOCampoHotelNameCom(String _nome) throws InterruptedException {
         invoiceDetailsPage.validarHotelName(_nome);
     }
 
     @E("a pagina Invoice Details exibe o campo Invoice Number com {string}")
     public void aPaginaInvoiceDetailsExibeOCampoInvoiceNumberCom(String _numero) {
-//        invoiceDetailsPage.validarNumeroDeInvoice(_numero);
+        invoiceDetailsPage.validarNumeroDeInvoice(_numero);
     }
 
     @E("a pagina Invoice Details exibe o campo Invoice Date com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoInvoiceDateCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoInvoiceDateCom(String _data) {
+        invoiceDetailsPage.validarInvoiceDate(_data);
     }
 
     @E("a pagina Invoice Details exibe o campo Due Date com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoDueDateCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoDueDateCom(String _data) {
+        invoiceDetailsPage.validarDueDate(_data);
     }
 
     @E("a pagina Invoice Details exibe o campo Booking Code com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoBookingCodeCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoBookingCodeCom(String _bookingCode) {
+        invoiceDetailsPage.validarBookingCode(_bookingCode);
     }
 
     @E("a pagina Invoice Details exibe o campo Room com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoRoomCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoRoomCom(String _room) {
+        invoiceDetailsPage.validarRoom(_room);
     }
 
     @E("a pagina Invoice Details exibe o campo Total Stay Count com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoTotalStayCountCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoTotalStayCountCom(String _count) {
+        invoiceDetailsPage.validarTotalStayCount(_count);
     }
 
     @E("a pagina Invoice Details exibe o campo Total Stay Amount com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoTotalStayAmountCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoTotalStayAmountCom(String _amount) {
+        invoiceDetailsPage.validarTotalStayAmount(_amount);
     }
 
     @E("a pagina Invoice Details exibe o campo Check In com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoCheckInCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoCheckInCom(String _data) {
+        invoiceDetailsPage.validarCheckIn(_data);
     }
 
     @E("a pagina Invoice Details exibe o campo Check Out com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoCheckOutCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoCheckOutCom(String _data) {
+        invoiceDetailsPage.validarCheckOut(_data);
     }
 
     @E("a pagina Invoice Details exibe o campo Customer Details com {string}, {string} e {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoCustomerDetailsComE(String arg0, String arg1, String arg2) {
+    public void aPaginaInvoiceDetailsExibeOCampoCustomerDetailsComE(String _linha1, String _linha2, String _linha3) {
+        invoiceDetailsPage.validarCustomerDetails(_linha1);
+        invoiceDetailsPage.validarCustomerDetails(_linha2);
+        invoiceDetailsPage.validarCustomerDetails(_linha3);
     }
 
     @E("a pagina Invoice Details exibe o campo Deposit Now com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoDepositNowCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoDepositNowCom(String _valor) {
+        invoiceDetailsPage.validarDepositNow(_valor);
     }
 
     @E("a pagina Invoice Details exibe o campo Tax & VATe com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoTaxVATeCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoTaxVATeCom(String _valor) {
+        invoiceDetailsPage.validarTaxEVate(_valor);
     }
 
     @E("a pagina Invoice Details exibe o campo Total Amount com {string}")
-    public void aPaginaInvoiceDetailsExibeOCampoTotalAmountCom(String arg0) {
+    public void aPaginaInvoiceDetailsExibeOCampoTotalAmountCom(String _valor) {
+        invoiceDetailsPage.validarTotalAmount(_valor);
     }
 
 }
