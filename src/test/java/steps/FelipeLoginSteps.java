@@ -1,14 +1,13 @@
 package steps;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import pages.AutomationExampleInvoiceListPage;
-import pages.AutomationExampleLoginPage;
-import runner.base_class.BasePage;
+import pages.FelipeAutomationExampleInvoiceListPage;
+import pages.FelipeAutomationExampleLoginPage;
 import runner.base_class.BaseSteps;
 
-public class LoginSteps extends BaseSteps {
-    AutomationExampleLoginPage loginPage = new AutomationExampleLoginPage();
-    AutomationExampleInvoiceListPage listPage = new AutomationExampleInvoiceListPage();
+public class FelipeLoginSteps extends BaseSteps {
+    FelipeAutomationExampleLoginPage loginPage = new FelipeAutomationExampleLoginPage();
+    FelipeAutomationExampleInvoiceListPage listPage = new FelipeAutomationExampleInvoiceListPage();
     @Given("that the user is on the login page")
     public void that_the_user_is_on_the_login_page() {
         loginPage.abrir();

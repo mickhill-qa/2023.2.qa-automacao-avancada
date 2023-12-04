@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class AutomationExampleLoginPage extends BasePage {
+public class FelipeAutomationExampleLoginPage extends BasePage {
     //mapping
     private String urlLogin = "https://automation-sandbox-python-mpywqjbdza-uc.a.run.app/";
     private By inputUsername = By.cssSelector("input[name='username']");

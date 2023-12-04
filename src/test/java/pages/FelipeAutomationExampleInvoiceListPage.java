@@ -5,7 +5,7 @@ import runner.base_class.BasePage;
 
 import java.util.ArrayList;
 
-public class AutomationExampleInvoiceListPage extends BasePage {
+public class FelipeAutomationExampleInvoiceListPage extends BasePage {
     //mapping
     private String urlInvoiceList = "tbody";
     private By invoiceListTitle = By.xpath("//h2[contains(text(), \"Invoice List\")]");

@@ -1,12 +1,12 @@
 package steps;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import pages.AutomationExampleInvoiceListPage;
-import pages.AutomationExampleLoginPage;
+import pages.FelipeAutomationExampleInvoiceListPage;
+import pages.FelipeAutomationExampleLoginPage;
 
-public class InvoiceDetailsSteps {
-    AutomationExampleLoginPage loginPage = new AutomationExampleLoginPage();
-    AutomationExampleInvoiceListPage invoiceListPage = new AutomationExampleInvoiceListPage();
+public class FelipeInvoiceDetailsSteps {
+    FelipeAutomationExampleLoginPage loginPage = new FelipeAutomationExampleLoginPage();
+    FelipeAutomationExampleInvoiceListPage invoiceListPage = new FelipeAutomationExampleInvoiceListPage();
     @Given("that the user is logged into the system and the user is on the Invoice List screen")
     public void that_the_user_is_logged_into_the_system_and_the_user_is_on_the_invoice_list_screen() {
         loginPage.abrir();
