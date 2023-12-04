@@ -4,13 +4,13 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
-import pages.SeuBarrigaCadastroPage;
-import pages.SeuBarrigaResultadoCadastroPage;
+import pages.IngridSeuBarrigaCadastroPage;
+import pages.IngridSeuBarrigaResultadoCadastroPage;
 import runner.base_class.BaseSteps;
 
-public class SeuBarrigaCadastroSteps extends BaseSteps {
-    SeuBarrigaCadastroPage paginaCadastro = new SeuBarrigaCadastroPage();
-    SeuBarrigaResultadoCadastroPage paginaResultado = new SeuBarrigaResultadoCadastroPage();
+public class IngridSeuBarrigaCadastroSteps extends BaseSteps {
+    IngridSeuBarrigaCadastroPage paginaCadastro = new IngridSeuBarrigaCadastroPage();
+    IngridSeuBarrigaResultadoCadastroPage paginaResultado = new IngridSeuBarrigaResultadoCadastroPage();
 
     @Dado("que o usuario esta na pagina de cadastro")
     public void que_o_usuario_esta_na_pagina_de_cadastro() {

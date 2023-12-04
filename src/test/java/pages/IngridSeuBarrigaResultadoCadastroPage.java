@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class SeuBarrigaResultadoCadastroPage extends BasePage {
+public class IngridSeuBarrigaResultadoCadastroPage extends BasePage {
     private String url = "https:/seubarriga.wcaquino.me/cadastrarUsuario";
     private By mensagemSucesso = By.cssSelector("div.alert.alert-success");
     private By mensagemError = By.cssSelector("div.alert.alert-danger");
