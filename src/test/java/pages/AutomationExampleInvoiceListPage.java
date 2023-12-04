@@ -41,7 +41,6 @@ public class AutomationExampleInvoiceListPage extends BasePage {
         ArrayList<String> abas = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(abas.get(1));
     }
-
     public String getHotelName(){
         return  driver.findElement(hotelName).getText();
     }
