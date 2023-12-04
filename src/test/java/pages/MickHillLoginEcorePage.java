@@ -9,6 +9,7 @@ public class MickHillLoginEcorePage extends BasePage
     private By inputUsername = By.name("username");
     private By inputPassword = By.name("password");
     private By btnLogin = By.id("btnLogin");
+    private By textAlertaErro = By.cssSelector("[role='alert']");
 
     public void abrir ()
     {
@@ -28,5 +29,11 @@ public class MickHillLoginEcorePage extends BasePage
     public void clicarBtnLogin()
     {
         driver.findElement(btnLogin).click();
+    }
+
+    public String pegarMensagemDeErro()
+    {
+        waitElementVisible(textAlertaErro,5);
+        return driver.findElement(textAlertaErro).getText();
     }
 }
