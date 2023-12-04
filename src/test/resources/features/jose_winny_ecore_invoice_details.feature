@@ -1,13 +1,15 @@
 #language: pt
 Funcionalidade: José Winny - Ecore Invoice Details
 
-  Cenario: Validar Invoice Details - Rendezvous Hotel
+  Contexto:
     Dado que um usuario esta na pagina de autenticacao
     E preenche as credenciais validas
     E o sistema redireciona para a Invoice List
-    Quando clica no Invoice Link
-    Quando o sistema exibe a pagina Invoice Details
-    Entao a pagina Invoice Details exibe o campo Hotel Name com "Rendezvous Hotel"
+
+  Cenario: Validar Invoice Details - Rendezvous Hotel
+    Quando o usuario clica no Invoice Link
+    Entao o sistema exibe a pagina Invoice Details
+    E a pagina Invoice Details exibe o campo Hotel Name com "Rendezvous Hotel"
     E a pagina Invoice Details exibe o campo Invoice Number com "#110"
     E a pagina Invoice Details exibe o campo Invoice Date com "14/01/2018"
     E a pagina Invoice Details exibe o campo Due Date com "15/01/2018"
