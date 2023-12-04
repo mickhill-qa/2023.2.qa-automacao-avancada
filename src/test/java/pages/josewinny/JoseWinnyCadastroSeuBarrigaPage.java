@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CadastroSeuBarrigaPage extends BasePage {
+public class JoseWinnyCadastroSeuBarrigaPage extends BasePage {
 
     private String url = "https://seubarriga.wcaquino.me/cadastro";
     private By inputNome = By.id("nome");

@@ -3,7 +3,7 @@ package pages.josewinny;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class LoginSeuBarrigaPage extends BasePage {
+public class JoseWinnyLoginSeuBarrigaPage extends BasePage {
     private String url = "https://seubarriga.wcaquino.me/login";
     private By textNotificacao = By.cssSelector("div[role='alert']");
     public Boolean verificarSeEstouNapagina() {

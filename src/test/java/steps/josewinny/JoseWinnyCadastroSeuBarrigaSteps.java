@@ -5,13 +5,13 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Quando;
 import io.cucumber.java.pt.Entao;
 import org.junit.Assert;
-import pages.josewinny.CadastroSeuBarrigaPage;
-import pages.josewinny.LoginSeuBarrigaPage;
+import pages.josewinny.JoseWinnyCadastroSeuBarrigaPage;
+import pages.josewinny.JoseWinnyLoginSeuBarrigaPage;
 import runner.base_class.BaseSteps;
 
-public class CadastroSeuBarrigaSteps extends BaseSteps {
-    CadastroSeuBarrigaPage paginaCadastro = new CadastroSeuBarrigaPage();
-    LoginSeuBarrigaPage paginaLogin = new LoginSeuBarrigaPage();
+public class JoseWinnyCadastroSeuBarrigaSteps extends BaseSteps {
+    JoseWinnyCadastroSeuBarrigaPage paginaCadastro = new JoseWinnyCadastroSeuBarrigaPage();
+    JoseWinnyLoginSeuBarrigaPage paginaLogin = new JoseWinnyLoginSeuBarrigaPage();
     @Dado("que o usuario esta na pagina de cadastro e nao esta cadastrado")
     public void que_o_usuario_esta_na_pagina_de_cadastro_e_nao_esta_cadastrado() {
        paginaCadastro.abrir();
