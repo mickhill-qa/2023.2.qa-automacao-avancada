@@ -37,7 +37,7 @@ public class MickHillSrBarrigaCadastroPage extends BasePage {
     }
 
     public String pegarNotificacao() {
-        waitElementVisible(textNotificacao, 5);
+        waitElementVisible(textNotificacao);
         return driver.findElement(textNotificacao).getText();
     }
 }

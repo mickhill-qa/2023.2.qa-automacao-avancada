@@ -20,7 +20,7 @@ public class GooglePesquisaPage extends BasePage {
     }
 
     public void fecharDrodownPesquisa() {
-        waitElementVisible(primeiroItenDropdown, 5);
+        waitElementVisible(primeiroItenDropdown);
         actions.sendKeys(Keys.ESCAPE).perform();
     }
 
