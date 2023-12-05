@@ -13,3 +13,4 @@ public class EdInvoicEcorePage extends BasePage {
             return false;
     }
 }
+

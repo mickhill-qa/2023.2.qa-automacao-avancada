@@ -41,6 +41,6 @@ public class EdEcoreLoginSteps extends BaseSteps {
         String actualErrorMessage = loginPage.getFailedLoginMessage();
         String expectedErrorMessage = "Wrong username or password.";
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
-
     }
 }
+
