@@ -8,6 +8,7 @@ public class EdLoginEcorePage extends BasePage {
     private By UsernameInput = By.name("username");
     private By UsernamePassword = By.name("password");
     private By LoginBtn = By.id("btnLogin");
+    private By FailedLoginMessage = By.className("alert-danger");
 
     public void open(){
         driver.get(url);
@@ -24,6 +25,10 @@ public class EdLoginEcorePage extends BasePage {
     public void LoginBtnClick()
     {
         driver.findElement(LoginBtn).click();
+    }
+
+    public String getFailedLoginMessage() {
+        return driver.findElement(FailedLoginMessage).getText();
     }
 
 
