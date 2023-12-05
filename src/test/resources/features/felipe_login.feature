@@ -2,7 +2,7 @@
 Feature: Login
   Background:
     Given that the user is on the login page
-
+  @resetBrowser
   Scenario: TC001 - Success Login
     When the user fills in the fields username and password with valid data
     And click the login button
