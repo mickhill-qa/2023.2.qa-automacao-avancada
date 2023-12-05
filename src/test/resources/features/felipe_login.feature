@@ -8,6 +8,7 @@ Feature: Login
     And click the login button
     Then application should redirect the user to the Page Invoice List
 
+  @resetBrowser
   Scenario Outline: TC002 - Unsuccessful login attempt
     When the user fills in the fields username "<username>" and password "<password>" with invalid data
     And click the login button
