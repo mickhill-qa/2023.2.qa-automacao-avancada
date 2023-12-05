@@ -1,10 +1,15 @@
 package runner.support;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.base_class.BasePage;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Actions extends BasePage {
     public void waitElementsVisible(By element, int time) {
@@ -38,6 +43,23 @@ public class Actions extends BasePage {
             System.out.println("Não clicou no elemento " + element + " com o Index " + index);
             System.out.println(erro);
         }
+    }
+
+    public void click_link(By element) {
+        WebElement invoiceLink = driver.findElement(element);
+        invoiceLink.click();
+    }
+
+    public String getPositionTextStringExpecific(String texto, String separacao, int posicao, int posicaoString){
+        List<String> nomes = Arrays.asList(texto.split(separacao));
+        String primeiroNome = nomes.get(posicao).substring(posicaoString);
+        return primeiroNome;
+    }
+
+    public String getPositionText(String texto, String separacao, int posicao){
+        List<String> nomes = Arrays.asList(texto.split(separacao));
+        String primeiroNome = nomes.get(posicao);
+        return primeiroNome;
     }
 
     public void set(By element, String text){
@@ -81,6 +103,11 @@ public class Actions extends BasePage {
         } catch (Exception erro) {
             System.out.println("Não encontrou o " + text);
         }
+    }
+
+    public void getNewTab(){
+        List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(windowHandles.get(1));
     }
 
     public String get_text_index(By element, int index){

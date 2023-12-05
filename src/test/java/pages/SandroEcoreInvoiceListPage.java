@@ -1,16 +1,21 @@
 package pages;
 
-import runner.base_class.BaseSteps;
+import org.openqa.selenium.By;
 import runner.support.Actions;
 
-public class SandroEcoreInvoiceListPage extends BaseSteps {
-    Actions actions = new Actions();
+public class SandroEcoreInvoiceListPage extends Actions {
+
+    private By linkInvoiceDetails = By.xpath("(//a)[2]");
+
+
     public String validaUrl(){
-        String url = actions.get_url();
+        String url = get_url();
         return url;
     }
 
-
-
+    public void clikLinkInvoiceDetails(){
+        click_link(linkInvoiceDetails);
+        getNewTab();
+    }
 
 }
