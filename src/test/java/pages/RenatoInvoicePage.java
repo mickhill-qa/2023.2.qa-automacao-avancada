@@ -10,8 +10,8 @@ public class RenatoInvoicePage extends BasePage {
     private By btnInvoceDetails = By.cssSelector("a[href='/invoice/0']");
 
     public String validateTheInvoiceListPage(){
-        String msg = driver.findElement(title).getText();
-        return msg;
+        String url = driver.findElement(title).getText();
+        return url;
     }
     public void logout(){
         driver.findElement(btnLogout).click();
@@ -20,4 +20,5 @@ public class RenatoInvoicePage extends BasePage {
     public void clickBtnInvoiceDetails(){
         driver.findElement(btnInvoceDetails).click();
     }
+
 }
