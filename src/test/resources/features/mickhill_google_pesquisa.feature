@@ -1,5 +1,5 @@
 #language: pt
-Funcionalidade: Google Pesquisa
+Funcionalidade: Mick Hill - Google Pesquisa
 
     Cenario: Busca com sucesso
         Dado que o usuario esta na pagina de pesquisa
