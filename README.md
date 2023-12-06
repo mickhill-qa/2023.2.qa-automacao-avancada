@@ -44,6 +44,10 @@ git checkout -b feature/<aluno>/recuperacao
         1. Repositorio de entrega: https://github.com/mickhill-qa/2023.2.qa-automacao-avancada
         1. Entregar com um pull-request;
         1. Entregar até 24/11/2023;
+        1. Os nomes de arquivos deve comecar com o nome do aluno:
+            - [tio_mick](#)_cadastro_seu_barriga.feature
+            - [TioMick](#)CadastroSeuBarrigaSteps.java
+            - [TioMick](#)XPTOPage.java
 
 ---
 2. Atividade de automacao
@@ -62,4 +66,8 @@ git checkout -b feature/<aluno>/recuperacao
       1. Pages/Páginas do site no Pacote/Package: pages
       1. Repositorio de entrega: https://github.com/mickhill-qa/2023.2.qa-automacao-avancada
       1. Entregar com um pull-request;
-      1. Entregar até 01/12/2023;
+      1. Entregar até 08/12/2023;
+      1. Os nomes de arquivos deve comecar com o nome do aluno:
+          - [tio_mick](#)_xpto.feature
+          - [TioMick](#)XPTOSteps.java
+          - [TioMick](#)XPTOPage.java
