@@ -1,4 +1,6 @@
 #language:pt
+@ingrid_ecore_invoice_list
+@resetBrowser
 Funcionalidade: Lista de Invoice
     Cenário: Detalhes do Invoice
         Dado que o usuario logado esta na pagina de listagem de Invoice
