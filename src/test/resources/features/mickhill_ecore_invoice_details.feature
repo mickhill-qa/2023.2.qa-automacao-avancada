@@ -1,5 +1,6 @@
 #language: pt
 @ecore_invoice_details
+@resetBrowser
 Funcionalidade: Mick Hill - Ecore Invoice Details
 
     Cenario: Validar Invoice Details
