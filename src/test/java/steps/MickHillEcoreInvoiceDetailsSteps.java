@@ -1,6 +1,7 @@
 package steps;
 
 import io.cucumber.java.pt.*;
+import org.junit.Assert;
 import pages.MickHillInvoiceDetailsEcorePage;
 import pages.MickHillInvoiceListEcorePage;
 import runner.base_class.BaseSteps;
@@ -17,17 +18,20 @@ public class MickHillEcoreInvoiceDetailsSteps extends BaseSteps
     public void o_cliente_clicar_no_invoice_link()
     {
         paginaListaFatura.clickInvoiceDetails(1);
-        paginaDetalheFatura.estouAqui();
     }
 
     @Quando("o sistama exibe a pagina Invoice Details")
     public void o_sistama_exibe_a_pagina_invoice_details()
     {
+        paginaDetalheFatura.estouAqui();
+        screenshot();
     }
 
     @Entao("a pagina Invoice Details exibe o campo Hotel Name com {string}")
-    public void a_pagina_invoice_details_exibe_o_campo_hotel_name_com(String string)
+    public void a_pagina_invoice_details_exibe_o_campo_hotel_name_com(String _hotelName)
     {
+        String textoNatela = paginaDetalheFatura.getTextHotelName();
+        Assert.assertEquals(_hotelName, textoNatela);
     }
 
     @Entao("a pagina Invoice Details exibe o campo Invoice Date com {string}")

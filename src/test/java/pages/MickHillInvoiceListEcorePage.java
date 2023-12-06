@@ -1,10 +1,8 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import runner.base_class.BasePage;
-
 import java.util.List;
 
 public class MickHillInvoiceListEcorePage extends BasePage
