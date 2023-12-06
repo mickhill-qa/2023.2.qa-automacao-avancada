@@ -15,11 +15,6 @@ public class Hooks extends BaseSteps {
             screenshot();
     }
 
-    @Before("@resetBrowser")
-    public void resetBrowser(){
-        closeBrownser();
-        openBrownser();
-    }
 
     @BeforeAll
     public static void antesDeTudo() {
