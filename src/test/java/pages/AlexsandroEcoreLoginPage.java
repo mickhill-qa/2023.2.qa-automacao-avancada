@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import runner.base_class.BasePage;
 
-import static java.awt.SystemColor.text;
-
-public class EcoreLoginPage extends BasePage {
+public class AlexsandroEcoreLoginPage extends BasePage {
 
     private String url = "https://automation-sandbox-python-mpywqjbdza-uc.a.run.app/";
     private By inputName = By.xpath("//input[@name='username']");
