@@ -1,18 +1,17 @@
 #language: pt
-@ecore_login
 @resetBrowser
-Funcionalidade: Lucas Norte - Ecore Login
+Funcionalidade: Lucas Norte - TC001 - Login (Positive)
 
   Contexto:
-    Dado que o usuario esta na pagina de autenticacao
+    Dado que o usuario esta na pagina de login
 
   Cenario: Login com Sucesso
-    Quando o usuario prenecher as credenciais "demouser" e "abc123"
-    Entao o sistema redireciona para a lista de faturas
+    Quando o usuario preencher as credenciais "demouser" e "abc123"
+    Entao o sistema encaminha para a lista de faturas
 
     Esquema do Cenario: Login com Credenciais invalidas
       Quando o usuario prenecher as credenciais <Username> e <Password>
-      Entao o sistema mostra a mensagem de erro: "Wrong username or password."
+      Entao o sistema exibe a mensagem de erro: "Wrong username or password."
       Exemplos:
         | Username    | Password   |
         | "Demouser"  | "abc123"   |

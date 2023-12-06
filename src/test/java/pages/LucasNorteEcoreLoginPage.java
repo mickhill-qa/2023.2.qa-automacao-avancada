@@ -30,8 +30,7 @@ public class LucasNorteEcoreLoginPage extends BasePage {
         driver.findElement(btnLogin).click();
     }
 
-    public String pegarMensagemDeErro()
-    {
+    public String pegarMensagemDeErro() {
         waitElementVisible(textAlertaErro,5);
         return driver.findElement(textAlertaErro).getText();
     }
