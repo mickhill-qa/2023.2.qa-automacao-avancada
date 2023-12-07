@@ -24,7 +24,7 @@ import java.util.List;
                 "html:target/cucumber/index.html",
                 "json:target/cucumber/index.json"
         }
-        //,tags = "@my_tag"
+//        ,tags = "@my_tag"
 
         /**
          * Executar testes no termial
