@@ -12,7 +12,7 @@
           E a pagina Invoice-Details exibe o campo Due Date com "15/01/2018"
           E a pagina Invoice-Details exibe o campo Invoice Number com "110"
           E a pagina Invoice-Details exibe o campo Booking Code com "0875"
-          E a pagina Invoice-Details exibe o campo Customer Details com "JOHN SMITH R2, AVENUE DU MAROC 123456"
+          E a pagina Invoice-Details exibe o campo Customer Details com "JOHNY SMITH R2, AVENUE DU MAROC 123456"
           E a pagina Invoice-Details exibe o campo Room com "Superior Double"
           E a pagina Invoice-Details exibe o campo Check In com "14/01/2018"
           E a pagina Invoice-Details exibe o campo Check Out com "15/01/2018"
