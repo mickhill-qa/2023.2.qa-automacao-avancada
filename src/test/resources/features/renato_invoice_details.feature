@@ -1,3 +1,5 @@
+@invoice_details
+@resetBrowser
 Feature: Invoice details
 
   Scenario: Validate invoice details

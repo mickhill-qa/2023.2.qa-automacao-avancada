@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import java.util.concurrent.TimeUnit;
+
 public class BrowserFactory
 {
     public static enum Bronser {
@@ -60,6 +62,8 @@ public class BrowserFactory
                 navegador = null;
                 new Exception("Navegador nao suportado");
         }
+        navegador.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        navegador.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         return navegador;
     }
 

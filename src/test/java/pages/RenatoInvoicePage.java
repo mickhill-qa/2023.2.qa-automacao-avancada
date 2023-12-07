@@ -13,9 +13,6 @@ public class RenatoInvoicePage extends BasePage {
         String url = driver.findElement(title).getText();
         return url;
     }
-    public void logout(){
-        driver.findElement(btnLogout).click();
-    }
 
     public void clickBtnInvoiceDetails(){
         driver.findElement(btnInvoceDetails).click();

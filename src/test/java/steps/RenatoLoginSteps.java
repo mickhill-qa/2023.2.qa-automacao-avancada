@@ -24,7 +24,6 @@ public class RenatoLoginSteps extends BaseSteps {
     public void the_application_should_redirect_the_user_to_the_page_invoice_list() {
         String msgScreen = renatoInvoicePage.validateTheInvoiceListPage();
         Assert.assertEquals("Invoice List", msgScreen);
-        renatoInvoicePage.logout();
     }
     @When("Fill the following fields {string} and {string} and click the button Login")
     public void fill_the_following_fields_and_and_click_the_button_login(String email, String password) {

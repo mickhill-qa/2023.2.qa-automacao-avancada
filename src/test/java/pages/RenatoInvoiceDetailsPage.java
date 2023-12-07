@@ -10,7 +10,7 @@ import java.util.List;
 public class RenatoInvoiceDetailsPage extends BasePage {
 
     private By hotelname = By.cssSelector("h4[class='mt-5']");
-    private By invoiceDate = By.cssSelector("ul > li:nth-child(1)");
+    private By invoiceDate = By.cssSelector("section ul > li:nth-child(1)");
     private By dueDate = By.cssSelector("section ul > li:nth-child(2)");
     private By invoiceNumber = By.cssSelector("h6[class='mt-2']");
     private By bookingCode = By.cssSelector(".table > tbody > tr:nth-child(1) > td:nth-child(2)");
@@ -41,12 +41,14 @@ public class RenatoInvoiceDetailsPage extends BasePage {
 
     public String validateInvoiceDate() {
         String _invoiceDate = driver.findElement(invoiceDate).getText();
-        return _invoiceDate;
+        String [] invoiceDate = _invoiceDate.split(" ");
+        return invoiceDate[2];
     }
 
     public String validateDueDate() {
         String _dueDate = driver.findElement(dueDate).getText();
-        return _dueDate;
+        String[] dueDate = _dueDate.split(" ");
+        return dueDate[2];
     }
 
     public String validateInvoiceNumber() {

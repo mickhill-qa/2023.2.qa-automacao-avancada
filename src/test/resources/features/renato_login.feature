@@ -1,6 +1,7 @@
 #language: en
-
+@resetBrowser
 Feature: Login
+
 
   Scenario: Validate if the user can authenticate in the application with the credentials provided: Login (Positive)
     Given Have the main page loaded (https://automation-sandbox-python-mpywqjbdza-uc.a.run.app)

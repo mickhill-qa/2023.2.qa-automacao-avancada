@@ -18,7 +18,7 @@ public class RenatoInvoiceDetailsSteps extends BaseSteps {
     @Given("Have a successful login with the credentials provided")
     public void have_a_successful_login_with_the_credentials_provided() {
         renatoLoginPage.open("https://automation-sandbox-python-mpywqjbdza-uc.a.run.app");
-        renatoLoginPage.fillTheFields("demouser", "abc123");
+        renatoLoginPage.fillTheFields("demouser","abc123");
     }
     @Given("Page Invoice List is shown")
     public void page_invoice_list_is_shown() {
@@ -38,8 +38,8 @@ public class RenatoInvoiceDetailsSteps extends BaseSteps {
     @Then("Validate the information presented")
     public void validate_the_information_presented()  {
         Assert.assertEquals("Rendezvous Hotel", renatoInvoiceDetailsPage.validateHotelName());
-//        Assert.assertEquals("14/01/2018", renatoInvoiceDetailsPage.validateInvoiceDate());
-//        Assert.assertEquals("15/01/2018", renatoInvoiceDetailsPage.validateDueDate());
+        Assert.assertEquals("14/01/2018", renatoInvoiceDetailsPage.validateInvoiceDate());
+        Assert.assertEquals("15/01/2018", renatoInvoiceDetailsPage.validateDueDate());
 //        Assert.assertEquals("110", renatoInvoiceDetailsPage.validateInvoiceNumber());
 //        Assert.assertEquals("0875", renatoInvoiceDetailsPage.validateBookingCode());
 //        Assert.assertEquals("JOHNY SMITH R2, AVENUE DU MAROC 123456",
