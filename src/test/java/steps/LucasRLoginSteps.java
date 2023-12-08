@@ -1,15 +1,16 @@
 package steps;
 
-import pages.HomePage;
-import pages.LoginPage;
+import pages.LucasRHomePage;
+import pages.LucasRLoginPage;
 import runner.base_class.BaseSteps;
 import io.cucumber.java.pt.*;
 import org.junit.Assert;
 
-public class LoginSteps extends BaseSteps {
+public class LucasRLoginSteps extends BaseSteps {
 
-    LoginPage LoginUsuario = new LoginPage();
-    HomePage HomeUsuario = new HomePage();
+    LucasRLoginPage LoginUsuario = new LucasRLoginPage();
+    LucasRHomePage HomeUsuario = new LucasRHomePage();
+
 
 
     @Dado("que o usuario esteja na tela de login")
@@ -26,13 +27,18 @@ public class LoginSteps extends BaseSteps {
     }
     @Quando("o usuario clica no botao login")
     public void o_usuario_clica_no_botao_login() {
-        LoginUsuario.submeterLogin();
         screenshot();
+        LoginUsuario.submeterLogin();
     }
     @Entao("sistema deve apresentar lista de invoice")
     public void sistema_deve_apresentar_lista_de_invoice() {
-        HomeUsuario.getUrlHome();
-        HomeUsuario.getTextHome();
+        Assert.assertTrue(HomeUsuario.getUrlHome());
+        screenshot();
+    }
+
+    @Entao("sistema deve apresentar alerta com a mensagem Wrong username or password")
+    public void sistema_deve_apresentar_alerta_com_a_mensagem_Wrong_username_or_password() {
+        Assert.assertEquals("Wrong username or password.",LoginUsuario.getAlertaLoginSenhaIncoreto());
         screenshot();
     }
 
