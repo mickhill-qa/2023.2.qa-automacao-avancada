@@ -4,7 +4,7 @@ Funcionalidade: Sandro Augusto -  Ecore Login
 
   Cenario: Login com Sucesso
     Dado que o usuario esta na pagina de Login
-    Quando o usuario preenhcer os dados necessarios para o Login
+    Quando o usuario preenhcer com o "demouser" e "abc123"
     Entao o sistema redireciona para "https://automation-sandbox-python-mpywqjbdza-uc.a.run.app/account"
 
   @resetBrowser

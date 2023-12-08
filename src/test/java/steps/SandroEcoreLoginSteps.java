@@ -17,10 +17,9 @@ public class SandroEcoreLoginSteps extends BaseSteps {
         loginPage.abrir();
         screenshot();
     }
-
-    @Quando("o usuario preenhcer os dados necessarios para o Login")
-    public void o_usuario_preenhcer_os_dados_necessarios_para_o_login() {
-        loginPage.preencherField("demouser", "abc123");
+    @Quando("o usuario preenhcer com o {string} e {string}")
+    public void o_usuario_preenhcer_com_o_e(String username, String senha) {
+        loginPage.preencherField(username, senha);
         screenshot();
         loginPage.clicarLogin();
     }
