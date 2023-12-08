@@ -1,3 +1,4 @@
+@resetBrowser
 Feature: Ed - Invoice Ecore
   Scenario: Validate Invoice Details
     Given the login page is loaded

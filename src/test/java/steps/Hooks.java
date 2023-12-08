@@ -9,6 +9,12 @@ public class Hooks extends BaseSteps {
         scenario = _scenario;
     }
 
+    @Before("@resetBrowser")
+    public void resetBrowser() {
+        closeBrownser();
+        openBrownser();
+    }
+
     @After
     public void depoisDoTeste() {
         if (scenario.isFailed())
