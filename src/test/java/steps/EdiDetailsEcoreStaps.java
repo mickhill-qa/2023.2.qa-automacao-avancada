@@ -27,9 +27,9 @@ public class EdiDetailsEcoreStaps extends BaseSteps {
         invoicedetails.clickbtnLogin();
     }
 
-    @E("o usuario clica no link {string} para o primeiro item")
+    @E("o usuario clica no link para o primeiro item")
     public void o_Usuario_Clica_No_Link_Para_O_Primeiro_Item() {
-        listEcorePage.clickInvoiceDetails(1);
+        invoicedetails.clicknolink();
     }
     @E("o sistama exibe a pagina de detalhes da fatura")
     public void o_sistama_exibe_a_pagina_de_detalhes_da_fatura() {
