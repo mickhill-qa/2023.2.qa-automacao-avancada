@@ -1,4 +1,4 @@
-Feature: Ed - Ecore invalid login
+Feature: Ed - Ecore invalid login credentials
 Scenario Outline: TC002 - Login (Negative)
 
 Given the login page is loaded

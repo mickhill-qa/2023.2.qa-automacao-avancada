@@ -31,4 +31,3 @@ public class EdLoginEcorePage extends BasePage {
         return driver.findElement(FailedLoginMessage).getText();
     }
 }
-

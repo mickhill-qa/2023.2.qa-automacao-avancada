@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.EdInvoicEcorePage;
+import pages.EdInvoiceEcorePage;
 import pages.EdLoginEcorePage;
 import runner.base_class.BaseSteps;
 
@@ -12,7 +12,7 @@ import runner.base_class.BaseSteps;
 public class EdEcoreLoginSteps extends BaseSteps {
 
     EdLoginEcorePage loginPage = new EdLoginEcorePage();
-    EdInvoicEcorePage invoiceListPage = new EdInvoicEcorePage();
+    EdInvoiceEcorePage invoiceListPage = new EdInvoiceEcorePage();
 
     @Given("the login page is loaded")
     public void the_login_page_is_loaded() {
@@ -43,4 +43,3 @@ public class EdEcoreLoginSteps extends BaseSteps {
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
     }
 }
-
