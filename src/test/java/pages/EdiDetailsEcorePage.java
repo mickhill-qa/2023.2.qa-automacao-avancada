@@ -16,6 +16,7 @@ public class EdiDetailsEcorePage extends Utils {
     private By inputPassword = By.name("password");
     private By btnLogin = By.id("btnLogin");
     private By novaAba = By.cssSelector("div.row > div.col.border > a");
+    private By linkDetails = By.xpath("(//a)[2]");
     private By validPag = By.cssSelector("h2.mt-5");
     private By hotelName = By.cssSelector("h4.mt-5");
     private By invoiceNumber = By.cssSelector("h6[class='mt-2']");
@@ -47,11 +48,14 @@ public class EdiDetailsEcorePage extends Utils {
     }
 
     public void clickInvoiceLink() {
-        ArrayList<String> tabs = new ArrayList (driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-
     }
 
+    public void clicknolink() {
+        clicknolink(linkDetails);
+        getNewTab();
+    }
     public String validPag() {
         String Texto = get_text(validPag);
         return Texto;
@@ -61,6 +65,7 @@ public class EdiDetailsEcorePage extends Utils {
         String Texto = get_text(hotelName);
         return Texto;
     }
+
     public String invoiceNumber() {
         String Texto = get_text(invoiceNumber);
         return Texto;
@@ -116,12 +121,12 @@ public class EdiDetailsEcorePage extends Utils {
     }
 
     public String taxEvate() {
-        String Texto = get_text_index(billingDetails,1);
+        String Texto = get_text_index(billingDetails, 1);
         return Texto;
     }
 
     public String totalAmount() {
-        String Texto = get_text_index(billingDetails,2);
+        String Texto = get_text_index(billingDetails, 2);
         return Texto;
     }
 
