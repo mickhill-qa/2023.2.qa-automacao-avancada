@@ -6,34 +6,24 @@ import runner.base_class.BasePage;
 
 public class EdiLoginEcorePage extends BasePage {
     private String url = "https://automation-sandbox-python-mpywqjbdza-uc.a.run.app";
-    private By inputUsername = By.cssSelector("input[name='username']");
-    private By inputPassword = By.cssSelector("input[name='password']");
+    private By inputUsername = By.name("username");
+    private By inputPassword = By.name("password");
     private By btnLogin = By.id("btnLogin");
     private By mensagem = By.className("alert");
-    private String urlaccount = "https://automation-sandbox-python-mpywqjbdza-uc.a.run.app/account";
 
     public void abrir() {
         driver.get(url);
     }
-
-    public void setInputUsername() {
-        driver.findElement(inputUsername).sendKeys("demouser");
+    public void setInputUsername(String _username) { driver.findElement(inputUsername).sendKeys(_username);}
+    public void setInputPassword(String _password) {
+        driver.findElement(inputPassword).sendKeys(_password);
     }
-
-    public void setInputPassword() {
-        driver.findElement(inputPassword).sendKeys("abc123");
-    }
-
     public void clickBtnLogin() {
         driver.findElement(btnLogin).click();
     }
-
-    public void pressEnter() {
-        actions.sendKeys(Keys.ENTER).perform();
-    }
     public String validaMensagem(String Texto) {
-        Texto = driver.findElement(mensagem).getText();
-        return Texto;
+        waitElementVisible(mensagem,2);
+        return driver.findElement(mensagem).getText();
     }
 }
 
