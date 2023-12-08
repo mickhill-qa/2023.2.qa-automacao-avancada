@@ -59,7 +59,10 @@ public class IngridEcoreInvoiceSteps extends BaseSteps {
 
     @Entao("mostra {string} no campo Booking Code")
     public void show_booking_code(String _bookingCode){
-        //TODO Do Brooking Code step
+         String bookingCode = invoicePage.getBookingDetails().get("Booking Code");
+         Assert.assertNotNull(bookingCode);
+         Assert.assertEquals(_bookingCode, bookingCode);
+
     }
 
     @Entao("mostra {string} no campo Customer Details")
@@ -70,40 +73,56 @@ public class IngridEcoreInvoiceSteps extends BaseSteps {
 
     @Entao("mostra {string} no campo Room")
     public void show_room(String _room){
-        //TODO Do Room step
+        String roomInfo = invoicePage.getBookingDetails().get("Room");
+        Assert.assertNotNull(roomInfo);
+        Assert.assertEquals(_room, roomInfo);
     }
 
     @Entao("mostra {string} no campo Total Stay Count")
     public void show_total_stay_count(String _totalStayCount){
-        //TODO Do step
+        String stayCountInfo = invoicePage.getBookingDetails().get("Total Stay Count");
+        Assert.assertNotNull(stayCountInfo);
+        Assert.assertEquals(_totalStayCount, stayCountInfo);
     }
 
     @Entao("mostra {string} no campo Total Stay Amount")
     public void show_total_stay_amount(String _totalStayAmount){
-        //TODO Do step
+        String stayAmount = invoicePage.getBookingDetails().get("Total Stay Amount");
+        Assert.assertNotNull(stayAmount);
+        Assert.assertEquals(_totalStayAmount, stayAmount);
     }
 
     @Entao("mostra {string} no campo Check In")
     public void show_check_in(String _checkIn){
-        //TODO Do step
+        String checkIn = invoicePage.getBookingDetails().get("Check-In");
+        Assert.assertNotNull(checkIn);
+        Assert.assertEquals(_checkIn, checkIn);
     }
 
     @Entao("mostra {string} no campo Check Out")
     public void show_check_out(String _checkOut){
-        //TODO Do step
+         String ckeckOut = invoicePage.getBookingDetails().get("Check-Out");
+         Assert.assertNotNull(ckeckOut);
+         Assert.assertEquals(_checkOut, ckeckOut);
     }
 
-    @Entao("mostra {string} no campo Deposit Now")
-    public void show_deposit_now(String _depositNom){
-        //TODO Do step
+    @Entao("mostra {string} no campo Deposit Nowt")
+    public void show_deposit_nowt(String _depositNowt){
+         String depositNowt = invoicePage.getBillingDetails().get("Deposit Nowt");
+         Assert.assertNotNull(depositNowt);
+         Assert.assertEquals(_depositNowt, depositNowt);
     }
     @Entao("mostra {string} no campo Tax & VAT")
     public void show_tax_and_vat(String _taxAndVat){
-        //TODO Do step
+         String taxAndVat = invoicePage.getBillingDetails().get("Tax&VAT");
+         Assert.assertNotNull(taxAndVat);
+         Assert.assertTrue(_taxAndVat.contains(taxAndVat));
     }
 
     @Entao("mostra {string} no campo Total Amount")
     public void show_total_Amount(String _totalAmount){
-        //TODO Do step
+        String totalAmount = invoicePage.getBillingDetails().get("Total Amount");
+        Assert.assertNotNull(totalAmount);
+        Assert.assertTrue(_totalAmount.contains(totalAmount));
     }
 }

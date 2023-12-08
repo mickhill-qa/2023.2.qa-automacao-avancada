@@ -17,7 +17,7 @@ Funcionalidade: Lista de Invoice
         E mostra "$150" no campo Total Stay Amount
         E mostra "14/01/2018" no campo Check In
         E mostra "15/01/2018" no campo Check Out
-        E mostra "USD $20.90" no campo Deposit Now
+        E mostra "USD $20.90" no campo Deposit Nowt
         E mostra "USD $19.00" no campo Tax & VAT
         E mostra "USD $209.00" no campo Total Amount
 
