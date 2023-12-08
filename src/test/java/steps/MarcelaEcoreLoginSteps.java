@@ -44,11 +44,6 @@ public class MarcelaEcoreLoginSteps extends BaseSteps {
         pageLogin.clicarBtnLogin();
     }
 
-    @Dado("que o usuario nao esta logado")
-    public void que_o_usuario_nao_esta_logado(){
-        pageLogin.clicarBtnLogout();
-    }
-
     @Entao("o sistema apresenta uma mensagem de credenciais invalidas")
     public void o_sistema_apresenta_uma_mensagem_de_credenciais_invalidas() {
         boolean blnExibiuMensagemCredenciaisInvalidas = pageLogin.credenciaisInvalidas();

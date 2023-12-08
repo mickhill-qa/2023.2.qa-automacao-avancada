@@ -8,7 +8,6 @@ public class MarcelaLoginEcorePage extends BasePage {
     private By inputUsername = By.name("username");
     private By inputPassword = By.name("password");
     private By btnLogin = By.id("btnLogin");
-    private By btnLogout = By.xpath("/html/body/nav/ul/li/a");
     private By mensagemRetorno = By.xpath("/html/body/div/div[1]");
 
     public void abrir ()
@@ -30,8 +29,6 @@ public class MarcelaLoginEcorePage extends BasePage {
     {
         driver.findElement(btnLogin).click();
     }
-
-    public void clicarBtnLogout() { driver.findElement(btnLogout).click();}
 
     public boolean credenciaisInvalidas() {
         String mensagemExibida = driver.findElement(mensagemRetorno).getText();

@@ -13,9 +13,9 @@ Funcionalidade: Marcela Silva - Ecore Login
     Quando o usuario preenche as credenciais validas
     Entao o sistema redireciona o usuario para a lista de faturas
 
+  @resetBrowser
   Cenario: Login Negativo
-    Dado que o usuario nao esta logado
-    E que o usuario ta na pagina de autenticacao
+    Dado que o usuario ta na pagina de autenticacao
     Quando o usuario preenche os campos com credenciais invalidas
     Entao o sistema apresenta uma mensagem de credenciais invalidas
 
