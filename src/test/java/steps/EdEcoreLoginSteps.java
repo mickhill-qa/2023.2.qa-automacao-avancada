@@ -20,10 +20,10 @@ public class EdEcoreLoginSteps extends BaseSteps {
         loginPage.open();
     }
 
-    @When("the user inserts valid credentials and clicks on the login button")
-    public void the_user_inserts_valid_credentials() {
-        loginPage.fillUsernameField("demouser");
-        loginPage.fillPasswordField("abc123");
+    @When("the user inserts valid credentials \\({string} and {string})  and clicks on the login button")
+    public void the_user_inserts_valid_credentials_and_and_clicks_on_the_login_button(String string, String string2) {
+        loginPage.fillUsernameField(string);
+        loginPage.fillPasswordField(string2);
         loginPage.LoginBtnClick();
     }
     @Then("the system will redirect the user to the invoice list")

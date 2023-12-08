@@ -2,7 +2,7 @@
 Feature: Ed - Invoice Ecore
   Scenario: Validate Invoice Details
     Given the login page is loaded
-    When the user inserts valid credentials and clicks on the login button
+    When the user inserts valid credentials ("demouser" and "abc123")  and clicks on the login button
     Then the system will redirect the user to the invoice list
     When the invoice details link is clicked
     And the system shows the invoice details on another tab
