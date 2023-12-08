@@ -2,14 +2,14 @@ package steps;
 
 import io.cucumber.java.pt.*;
 import org.junit.Assert;
-import pages.SeuBarrigaCadastroPage;
+import pages.YohansSeuBarrigaCadastroPage;
 import runner.base_class.BaseSteps;
 
 
 
-public class CadastroSeuBarrigaSteps extends BaseSteps {
+public class YohansCadastroSeuBarrigaSteps extends BaseSteps {
 
-    SeuBarrigaCadastroPage paginaCadastro = new SeuBarrigaCadastroPage();
+    YohansSeuBarrigaCadastroPage paginaCadastro = new YohansSeuBarrigaCadastroPage();
 
     @Dado("que o usuario esta na pagina de cadastro {string}")
     public void que_o_usuario_esta_na_pagina_de_cadastro(String string) {

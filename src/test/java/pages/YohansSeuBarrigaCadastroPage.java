@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class SeuBarrigaCadastroPage extends BasePage {
+public class YohansSeuBarrigaCadastroPage extends BasePage {
     private String url = "https://seubarriga.wcaquino.me/cadastro";
     private String urlVariavel = "https://seubarriga.wcaquino.me/cadastrarUsuario";
     private By errorMessage = By.xpath("/html/body/div[1]");
