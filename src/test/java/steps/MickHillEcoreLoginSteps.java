@@ -21,13 +21,14 @@ public class MickHillEcoreLoginSteps extends BaseSteps
     public void que_o_usuario_esta_na_pagina_de_autenticacao()
     {
         pageLogin.abrir();
+        screenshot();
     }
 
-    @Quando("o usuario prenecher as credenciais validas")
-    public void o_usuario_prenecher_as_credenciais_validas()
+    @Quando("o usuario prenecher as credenciais {string} e {string}")
+    public void oUsuarioPrenecherAsCredenciaisE(String _username, String _password)
     {
-        pageLogin.preencherUsername("demouser");
-        pageLogin.preencherPassword("abc123");
+        pageLogin.preencherUsername(_username);
+        pageLogin.preencherPassword(_password);
         pageLogin.clicarBtnLogin();
     }
 
@@ -35,5 +36,13 @@ public class MickHillEcoreLoginSteps extends BaseSteps
     public void o_sistema_redireciona_para_a_lista_de_faturas()
     {
         Assert.assertTrue(paginaListaFatura.estouAqui());
+        screenshot();
+    }
+
+    @Entao("o sistema mostra a mensagem de erro: {string}")
+    public void oSistemaMostraAMensagemDeErro(String _msgError)
+    {
+        String msgNaTela = pageLogin.pegarMensagemDeErro();
+        Assert.assertEquals(_msgError, msgNaTela);
     }
 }
