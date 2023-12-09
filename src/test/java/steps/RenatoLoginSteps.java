@@ -12,28 +12,29 @@ public class RenatoLoginSteps extends BaseSteps {
     RenatoLoginPage renatoLoginPage = new RenatoLoginPage();
     RenatoInvoicePage renatoInvoicePage = new RenatoInvoicePage();
 
-    @Given("Have the main page loaded \\(https:\\/\\/automation-sandbox-python-mpywqjbdza-uc.a.run.app)")
-    public void have_the_main_page_loaded_https_automation_sandbox_python_mpywqjbdza_uc_a_run_app() {
+    @Given("the main page is loaded \\(https:\\/\\/automation-sandbox-python-mpywqjbdza-uc.a.run.app)")
+    public void the_main_page_is_loaded_https_automation_sandbox_python_mpywqjbdza_uc_a_run_app() {
         renatoLoginPage.open("https://automation-sandbox-python-mpywqjbdza-uc.a.run.app");
     }
-    @When("Fill the following fields and click the button Login")
-    public void fill_the_following_fields_and_click_the_button_login() {
+
+    @When("I fill the required fields and click the Login button")
+    public void i_fill_the_required_fields_and_click_the_login_button() {
         renatoLoginPage.fillTheFields("demouser", "abc123");
     }
-    @Then("The application should redirect the user to the page Invoice List.")
-    public void the_application_should_redirect_the_user_to_the_page_invoice_list() {
+
+    @Then("the application should redirect the user to the Invoice List page.")
+    public void the_application_should_redirect_the_user_to_the_invoice_list_page() {
         String msgScreen = renatoInvoicePage.validateTheInvoiceListPage();
         Assert.assertEquals("Invoice List", msgScreen);
     }
-    @When("Fill the following fields {string} and {string} and click the button Login")
-    public void fill_the_following_fields_and_and_click_the_button_login(String email, String password) {
+    @When("I fill the following fields {string} and {string} and click the Login button")
+    public void i_fill_the_following_fields_and_and_click_the_login_button(String email, String password) {
         renatoLoginPage.fillTheFields(email, password);
     }
-    @Then("The application shows the {string}")
-    public void the_application_shows_the(String string) {
+
+    @Then("the application should display the message {string}")
+    public void the_application_should_display_the_message(String text) {
         String msgError = renatoLoginPage.msgError();
-        Assert.assertEquals("Wrong username or password.", msgError);
+        Assert.assertEquals(text, msgError);
     }
-
-
 }

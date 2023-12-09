@@ -35,22 +35,65 @@ public class RenatoInvoiceDetailsSteps extends BaseSteps {
                 "https://automation-sandbox-python-mpywqjbdza-uc.a.run.app/invoice/0");
     }
 
-    @Then("Validate the information presented")
-    public void validate_the_information_presented()  {
+    @Then("validate the hotel name information")
+    public void validate_the_hotel_name_information() {
         Assert.assertEquals("Rendezvous Hotel", renatoInvoiceDetailsPage.validateHotelName());
-        Assert.assertEquals("14/01/2018", renatoInvoiceDetailsPage.validateInvoiceDate());
-        Assert.assertEquals("15/01/2018", renatoInvoiceDetailsPage.validateDueDate());
-//        Assert.assertEquals("110", renatoInvoiceDetailsPage.validateInvoiceNumber());
-//        Assert.assertEquals("0875", renatoInvoiceDetailsPage.validateBookingCode());
-//        Assert.assertEquals("JOHNY SMITH R2, AVENUE DU MAROC 123456",
-//                renatoInvoiceDetailsPage.validateCustomerDetails());
-//        Assert.assertEquals("Superior Double", renatoInvoiceDetailsPage.validateRoom());
-//        Assert.assertEquals("14/01/2018", renatoInvoiceDetailsPage.validateCheckIn());
-//        Assert.assertEquals("15/01/2018", renatoInvoiceDetailsPage.validateCheckOut());
-//        Assert.assertEquals("1", renatoInvoiceDetailsPage.validateTotalStayCount());
-//        Assert.assertEquals("$150", renatoInvoiceDetailsPage.validateTotalStayAmount());
-//        Assert.assertEquals("USD $20.90", renatoInvoiceDetailsPage.validateDepositNow());
-//        Assert.assertEquals("USD $19.00", renatoInvoiceDetailsPage.validateTaxVat());
-//        Assert.assertEquals("USD $209.00", renatoInvoiceDetailsPage.validateTotalAmount());
     }
+    @Then("validate the Invoice Date information")
+    public void validate_the_invoice_date_information() {
+        Assert.assertEquals("14/01/2018", renatoInvoiceDetailsPage.validateInvoiceDate());
+//        Assert.assertTrue(renatoInvoiceDetailsPage.validateInvoiceDate().contains("14/01/2018"));
+    }
+    @Then("validate the Due Date information")
+    public void validate_the_due_date_information() {
+        Assert.assertEquals("15/01/2018", renatoInvoiceDetailsPage.validateDueDate());
+//        Assert.assertTrue(renatoInvoiceDetailsPage.validateDueDate().contains("15/01/2018"));
+    }
+    @Then("validate the Invoice Number information")
+    public void validate_the_invoice_number_information() {
+        Assert.assertTrue(renatoInvoiceDetailsPage.validateInvoiceNumber().contains("110"));
+    }
+    @Then("validate the Booking Code information")
+    public void validate_the_booking_code_information() {
+        Assert.assertEquals("0875", renatoInvoiceDetailsPage.validateBookingCode());
+    }
+    @Then("validate the Customer Details information")
+    public void validate_the_customer_details_information() {
+        Assert.assertEquals("JOHNY SMITH\n" +
+                "R2, AVENUE DU MAROC\n" +
+                "123456", renatoInvoiceDetailsPage.validateCustomerDetails());
+    }
+    @Then("validate the Room information")
+    public void validate_the_room_information() {
+        Assert.assertEquals("Superior Double", renatoInvoiceDetailsPage.validateRoom());
+    }
+    @Then("validate the Check In information")
+    public void validate_the_check_in_information() {
+        Assert.assertEquals("14/01/2018", renatoInvoiceDetailsPage.validateCheckIn());
+    }
+    @Then("validate the Check Out information")
+    public void validate_the_check_out_information() {
+        Assert.assertEquals("15/01/2018", renatoInvoiceDetailsPage.validateCheckOut());
+    }
+    @Then("validate the Total Stay Count information")
+    public void validate_the_total_stay_count_information() {
+        Assert.assertEquals("1", renatoInvoiceDetailsPage.validateTotalStayCount());
+    }
+    @Then("validate the Total Stay Amount information")
+    public void validate_the_total_stay_amount_information() {
+        Assert.assertEquals("$150", renatoInvoiceDetailsPage.validateTotalStayAmount());
+    }
+    @Then("validate the Deposit Now information")
+    public void validate_the_deposit_now_information() {
+        Assert.assertEquals("USD $20.90", renatoInvoiceDetailsPage.validateDepositNow());
+    }
+    @Then("validate the Tax Vat information")
+    public void validate_the_tax_vat_information() {
+        Assert.assertTrue(renatoInvoiceDetailsPage.validateTaxVat().contains("USD $19"));
+    }
+    @Then("validate the Total Amount information")
+    public void validate_the_total_amount_information() {
+        Assert.assertEquals("USD $209", renatoInvoiceDetailsPage.validateTotalAmount());
+    }
+
 }

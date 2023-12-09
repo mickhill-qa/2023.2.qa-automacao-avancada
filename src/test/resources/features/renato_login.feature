@@ -3,16 +3,15 @@
 Feature: Login
 
 
-  Scenario: Validate if the user can authenticate in the application with the credentials provided: Login (Positive)
-    Given Have the main page loaded (https://automation-sandbox-python-mpywqjbdza-uc.a.run.app)
-    When Fill the following fields and click the button Login
-    Then The application should redirect the user to the page Invoice List.
+  Scenario: Validate successful authentication with provided credentials (Positive)
+    Given the main page is loaded (https://automation-sandbox-python-mpywqjbdza-uc.a.run.app)
+    When I fill the required fields and click the Login button
+    Then the application should redirect the user to the Invoice List page.
 
-
-  Scenario Outline: Validate that the application denies the user login with invalid credentials: Login (Negative)
-    Given Have the main page loaded (https://automation-sandbox-python-mpywqjbdza-uc.a.run.app)
-    When Fill the following fields <email> and <password> and click the button Login
-    Then The application shows the "Wrong username or password."
+  Scenario Outline: Validate application denial for user login with invalid credentials (Negative)
+    Given the main page is loaded (https://automation-sandbox-python-mpywqjbdza-uc.a.run.app)
+    When I fill the following fields <email> and <password> and click the Login button
+    Then the application should display the message "Wrong username or password."
 
     Examples:
       | email       | password   |

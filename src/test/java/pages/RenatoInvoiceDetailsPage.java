@@ -43,12 +43,16 @@ public class RenatoInvoiceDetailsPage extends BasePage {
         String _invoiceDate = driver.findElement(invoiceDate).getText();
         String [] invoiceDate = _invoiceDate.split(" ");
         return invoiceDate[2];
+//        System.out.println(_invoiceDate);
+//        return _invoiceDate;
     }
 
     public String validateDueDate() {
         String _dueDate = driver.findElement(dueDate).getText();
         String[] dueDate = _dueDate.split(" ");
         return dueDate[2];
+//        System.out.println(_dueDate);
+//        return _dueDate;
     }
 
     public String validateInvoiceNumber() {
@@ -93,6 +97,7 @@ public class RenatoInvoiceDetailsPage extends BasePage {
 
     public String validateDepositNow() {
         String _depositNow = driver.findElement(depositNow).getText();
+
         return _depositNow;
     }
 
