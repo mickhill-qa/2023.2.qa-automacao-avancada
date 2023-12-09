@@ -1,5 +1,4 @@
 #language: pt
-@lucasnorte
 @resetBrowser
 Funcionalidade: Lucas Norte - TC003 - Validate invoice details
 
