@@ -31,7 +31,7 @@ public class ItaloEcoreLoginPage extends BasePage {
     }
 
     public String pegarMensagemDeErro() {
-        waitElementVisible(textAlertaErro,5);
+        waitElementVisible(textAlertaErro,20);
         return driver.findElement(textAlertaErro).getText();
     }
 

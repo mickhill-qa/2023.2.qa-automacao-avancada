@@ -1,7 +1,7 @@
 #language: pt
-  #language: pt
+@ecore_invoice_details
 @resetBrowser
-Funcionalidade:  Italo Login Ecore
+Funcionalidade:  Italo - Login Ecore
 
   Contexto:
     Dado que o usuario esta na pagina de login
