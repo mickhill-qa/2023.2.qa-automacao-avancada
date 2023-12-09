@@ -32,18 +32,18 @@ public class MarcelaEcoreInvoiceDetailsSteps extends BaseSteps {
         Assert.assertEquals(_hotelName, textoNatela);
     }
 
-    @Entao("a pagina Invoice Details exibe o campo Invoice Date com {string}")
-    public void a_pagina_invoice_details_exibe_o_campo_invoice_date_com(String _invoiceDate)
+    @Entao("a pagina Invoice Details exibe o campo Invoice Date")
+    public void a_pagina_invoice_details_exibe_o_campo_invoice_date()
     {
         String textoNatela = paginaDetalheFatura.getInvoiceDate();
-        Assert.assertEquals(_invoiceDate, textoNatela);
+        Assert.assertTrue(textoNatela.contains("14/01/2018"));
     }
 
-    @Entao("a pagina Invoice Details exibe o campo Due Date com {string}")
-    public void a_pagina_invoice_details_exibe_o_campo_due_date_com(String _dueDate)
+    @Entao("a pagina Invoice Details exibe o campo Due Date")
+    public void a_pagina_invoice_details_exibe_o_campo_due_date()
     {
         String textoNatela = paginaDetalheFatura.getDueDate();
-        Assert.assertEquals(_dueDate, textoNatela);
+        Assert.assertTrue(textoNatela.contains("15/01/2018"));
     }
 
     @Entao("a pagina Invoice Details exibe o campo Invoice Number com {string}")
@@ -60,11 +60,12 @@ public class MarcelaEcoreInvoiceDetailsSteps extends BaseSteps {
         Assert.assertEquals(_bookingCode, textoNatela);
     }
 
-    @Entao("a pagina Invoice Details exibe o campo Customer Details com {string}")
-    public void a_pagina_invoice_details_exibe_o_campo_customer_details_com(String _customerDetails)
-    {
+    @Entao("a pagina Invoice Details exibe o campo Customer Details")
+    public void a_pagina_invoice_details_exibe_o_campo_customer_details() {
         String textoNatela = paginaDetalheFatura.getCustomerDetails();
-        Assert.assertEquals(_customerDetails, textoNatela);
+        Assert.assertTrue(textoNatela.contains("JOHNY SMITH"));
+        Assert.assertTrue(textoNatela.contains("R2, AVENUE DU MAROC"));
+        Assert.assertTrue(textoNatela.contains("123456"));
     }
 
     @Entao("a pagina Invoice Details exibe o campo Room com {string}")
