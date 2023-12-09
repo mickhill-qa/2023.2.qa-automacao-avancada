@@ -25,7 +25,6 @@ public class EdInvoiceEcorePage extends BasePage {
         else
             return false;
     }
-
     public void ClickOnInvoiceDetailsLink(){
         driver.findElement(InvoiceDetailsLink).click();
     }
