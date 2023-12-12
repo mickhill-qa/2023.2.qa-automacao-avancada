@@ -22,3 +22,4 @@ Funcionalidade: invoice
     E a pagina invoice exibe  o campo now com ""
     E a pagina invoice exibe  o campo vat com ""
     E a pagina invoice exibe  o campo T amount com ""
+
