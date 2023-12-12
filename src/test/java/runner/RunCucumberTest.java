@@ -24,7 +24,7 @@ import java.util.List;
                 "html:target/cucumber/index.html",
                 "json:target/cucumber/index.json"
         }
-        //,tags = "@my_tag"
+        ,tags = "not @ecore_invoice_details and not @ecore_login"
 
         /**
          * Executar testes no termial
