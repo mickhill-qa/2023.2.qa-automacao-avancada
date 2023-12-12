@@ -28,3 +28,4 @@ public class GooglePesquisaPage extends BasePage {
         driver.findElement(btnPesquisar).click();
     }
 }
+
