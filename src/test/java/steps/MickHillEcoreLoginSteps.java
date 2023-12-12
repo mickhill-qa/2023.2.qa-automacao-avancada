@@ -21,6 +21,7 @@ public class MickHillEcoreLoginSteps extends BaseSteps
     public void que_o_usuario_esta_na_pagina_de_autenticacao()
     {
         pageLogin.abrir();
+        screenshot();
     }
 
     @Quando("o usuario prenecher as credenciais {string} e {string}")
@@ -35,6 +36,7 @@ public class MickHillEcoreLoginSteps extends BaseSteps
     public void o_sistema_redireciona_para_a_lista_de_faturas()
     {
         Assert.assertTrue(paginaListaFatura.estouAqui());
+        screenshot();
     }
 
     @Entao("o sistema mostra a mensagem de erro: {string}")

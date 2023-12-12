@@ -3,10 +3,10 @@ name: Cucumber
 
 # When to run the PIPELINE
 on:
-  pull_request:
-    branches:
-      - main
-      - develop
+#  pull_request:
+#    branches:
+#      - main
+#      - develop
 
   push:
     branches:
