@@ -9,6 +9,7 @@ Funcionalidade: invoice
     Quando o cliente clica em invoice
     Quando o sistema exibe pagina invoice
     Entao a pagina invoice exibe  o campo hotel com ""
+
     E a pagina invoice exibe  o campo invoice com ""
     E a pagina invoice exibe  o campo due com ""
     E a pagina invoice exibe  o campo invoice com ""
