@@ -1,4 +1,6 @@
 #language: pt
+@ecore_login
+@resetBrowser
 Funcionalidade: Mick Hill - Ecore Login
     Analise e Modelage: Plano de testes
     Excecucao de testes: Scrips e Evidencias
