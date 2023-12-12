@@ -21,6 +21,7 @@ public class Hooks extends BaseSteps {
             screenshot();
     }
 
+
     @BeforeAll
     public static void antesDeTudo() {
         openBrownser();
