@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
-public class HerokuappLoginPage extends BasePage {
+public class Grupo4HerokuappLoginPage extends BasePage {
 
     private String url = "https://the-internet.herokuapp.com/login";
     private By campoUserName = By.id("username");
