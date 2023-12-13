@@ -6,8 +6,8 @@ Feature: Team 3 - Heroku Login
 
   Scenario: TC001 - Login (Positive)
     Given the login page is loaded
-    When the user inserts valid credentials ("tomsmith" and "SuperSecretPassword!")and clicks on the login button
-    Then the system will show a success message
+    When the user inserts valid credentials "tomsmith" and "SuperSecretPassword!" and clicks on the login button
+    Then the system will redirect you to a secure area
 
 
   @resetBrowser
@@ -21,7 +21,8 @@ Feature: Team 3 - Heroku Login
 
     Examples:
       | username  | password |
-      | Demouser  | abc123   |
-      | demouser_ | xyz      |
-      | demouser  | nananana |
-
+      |           | SuperSecretPassword! |
+      | tomsmith  |                      |
+      | TomSmith  | SuperSecretPassword! |
+      | tomsmith  |     senhainvalida    |
+      | TomSmith  |     senhainvalida!   |
