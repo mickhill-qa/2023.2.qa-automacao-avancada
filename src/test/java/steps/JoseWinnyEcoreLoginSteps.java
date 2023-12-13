@@ -15,6 +15,7 @@ public class JoseWinnyEcoreLoginSteps extends BaseSteps {
     @Dado("que um usuario esta na pagina de autenticacao")
     public void que_um_usuario_esta_na_pagina_de_autenticacao(){
         loginPage.abrir();
+        screenshot();
     }
 
     @Quando("preenche as credenciais {string} e {string}")
@@ -22,16 +23,19 @@ public class JoseWinnyEcoreLoginSteps extends BaseSteps {
         loginPage.preencherUsername(_username);
         loginPage.preencherPassword(_password);
         loginPage.clicarBtnLogin();
+        screenshot();
     }
 
     @Entao("o sistema redireciona para a Invoice List")
     public void o_sistema_redireciona_para_a_invoice_list() {
         invoiceListPage.validarMudancaDePagina();
+        screenshot();
     }
 
     @Entao("o sistema exibe a mensagem de erro: {string}")
     public void o_sistema_exibe_a_mensagem_de_erro(String _msgEsperada) {
         String msgEncontrada = loginPage.pegarMensagemDeErro();
         Assert.assertEquals(msgEncontrada,_msgEsperada);
+        screenshot();
     }
 }

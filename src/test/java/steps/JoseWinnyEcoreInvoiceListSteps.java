@@ -16,16 +16,19 @@ public class JoseWinnyEcoreInvoiceListSteps extends BaseSteps {
         loginPage.preencherUsername("demouser");
         loginPage.preencherPassword("abc123");
         loginPage.clicarBtnLogin();
+        screenshot();
     }
     @Quando("o usuario clica no Invoice Link")
     public void oUsuarioClicaNoInvoiceLink() {
         invoiceListPage.clicarNoPrimeiroLink();
+        screenshot();
     }
 
     @Então("o sistema exibe a pagina Invoice Details")
     public void oSistemaExibeAPaginaInvoiceDetails() {
         invoiceListPage.mudarAba();
         invoiceDetailsPage.validarMudancaDePagina();
+        screenshot();
     }
 
     @E("a pagina Invoice Details exibe o campo Hotel Name com {string}")
