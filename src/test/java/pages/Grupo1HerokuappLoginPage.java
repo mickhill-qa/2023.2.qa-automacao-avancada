@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class Grupo1_Heroherokuapp_Login {
+public class Grupo1HerokuappLoginPage {
     private By campo_username = By.id("username");
     private By campo_password = By.id("password");
     private By btn_login = By.className("radius");
