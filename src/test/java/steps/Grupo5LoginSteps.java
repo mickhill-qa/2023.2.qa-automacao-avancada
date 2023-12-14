@@ -1,6 +1,11 @@
 package steps;
 import io.cucumber.java.pt.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Grupo5LoginPage;
 import pages.Grupo5SecureAreaPage;
 import runner.base_class.BaseSteps;
@@ -12,6 +17,7 @@ public class Grupo5LoginSteps extends BaseSteps
      * */
     Grupo5LoginPage pageLogin = new Grupo5LoginPage();
     Grupo5SecureAreaPage paginaSegura = new Grupo5SecureAreaPage();
+    WebDriver driver;
 
     /**
      * Steps
@@ -19,6 +25,7 @@ public class Grupo5LoginSteps extends BaseSteps
     @Dado("que o usuario esta na pagina de login")
     public void que_o_usuario_esta_na_pagina_de_login() {
         pageLogin.abrir();
+        Assert.assertTrue(pageLogin.verificarSeEstouNapagina());
         screenshot();
     }
 
@@ -45,13 +52,16 @@ public class Grupo5LoginSteps extends BaseSteps
     public void o_sistema_redireciona_para_a_security_area() {
         Assert.assertTrue(paginaSegura.verificarSeEstouNapagina());
         screenshot();
-
     }
 
     @Entao("apresenta a mensagem {string}")
     public void apresenta_a_mensagem(String _msg) {
         Assert.assertTrue(pageLogin.pegarMensagemRetornada().contains(_msg));
+    }
 
+    @Entao("o sistema mostra a seguinte mensagem de erro {string}")
+    public void o_sistema_mostra_a_seguinte_mensagem_de_erro(String _msg) {
+        Assert.assertTrue(paginaSegura.pegarMensagemRetornada().contains(_msg));
     }
 
 }

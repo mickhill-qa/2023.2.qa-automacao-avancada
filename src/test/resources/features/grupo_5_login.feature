@@ -18,7 +18,7 @@ Funcionalidade: Grupo 5 - Login
 
   Esquema do Cenario: Login com credenciais invalidas
     Quando o usuario preenche o campo username com <Username> e o campo password com <Password>
-    Entao o sistema mostra a mensagem de erro: <Message>
+    Entao o sistema mostra a seguinte mensagem de erro <Message>
     Exemplos:
       | Username    | Password               | Message                    |
       | "tomsmith"  | "invalido"             | "Your password is invalid" |
