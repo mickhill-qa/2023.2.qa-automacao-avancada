@@ -5,13 +5,14 @@ import org.openqa.selenium.Keys;
 import runner.base_class.BasePage;
 
 public class Grupo2XPTOPage extends BasePage {
-    private String url = "https://the-internet.herokuapp.com/login";
+    private String urlPaginaLogin = "https://the-internet.herokuapp.com/login";
     private By username = By.id("username");
     private By password = By.id("password");
-    private By errorMessage = By.id("flash");
+    private By message = By.id("flash");
+    private String urlPaginaHome = "https://the-internet.herokuapp.com/secure";
 
     public void abrir(){
-        driver.get(url);
+        driver.get(urlPaginaLogin);
     }
 
     public void preencherUsername(String _username){
@@ -26,9 +27,20 @@ public class Grupo2XPTOPage extends BasePage {
         actions.sendKeys(Keys.ENTER).perform();
     }
 
-    public String pegarMensagemDeErro()
-    {
-        waitElementVisible(errorMessage,5);
-        return driver.findElement(errorMessage).getText();
+    public String pegarMensagem() {
+        waitElementVisible(message,5);
+        return driver.findElement(message).getText().split("\n")[0];
     }
+
+    public Boolean verificarSeEstouNaPaginaHome() {
+        String urlAtual = driver.getCurrentUrl();
+        return urlAtual.contains(urlPaginaHome);
+    }
+
+    public Boolean verificarSeEstouNaPaginaLogin() {
+        String urlAtual = driver.getCurrentUrl();
+        return urlAtual.contains(urlPaginaLogin);
+    }
+
+
 }
