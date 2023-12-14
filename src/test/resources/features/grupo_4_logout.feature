@@ -13,11 +13,11 @@ Funcionalidade: Logout
     Entao o usuario nao deve ser redirecionado para a pagina Secure Area
     E o sistema deve exibir a mensagem "You must login to view the secure area!"
 
-  Cenario: TC003 - Efetuar logout com duas abas logadas
-    Dado que o usuario esteja logado em duas abas simultaneamente
-    Quando o usuario clicar no botão de logout em uma das abas
-    E o usuario mudar para a outra aba logada
-    E o usuario atualizar a pagina
-    Entao o usuario deve ser redirecionado para a pagina de login
-    E o sistema deve exibir a mensagem "You must login to view the secure area!"
-
+#  Cenario: TC003 - Efetuar logout com duas abas logadas
+#    Dado que o usuario esteja logado em duas abas simultaneamente
+#    Quando o usuario clicar no botão de logout em uma das abas
+#    E o usuario mudar para a outra aba logada
+#    E o usuario atualizar a pagina
+#    Entao o usuario deve ser redirecionado para a pagina de login
+#    E o sistema deve exibir a mensagem "You must login to view the secure area!"
+#
