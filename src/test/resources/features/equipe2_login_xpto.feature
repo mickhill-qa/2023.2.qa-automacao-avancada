@@ -23,3 +23,11 @@ Funcionalidade: Equipe-2 - Login internet herokuapp
 			|username      |password               |message						|
 			|"usuario1234" |"SuperSecretPassword!" |"Your username is invalid!"	|
 			|"tomsmith"    |"senhaErrada@123"      |"Your password is invalid!"	|
+
+
+
+
+	Cenario: Logout com Sucesso
+		Dado que o usuário logado está na pagina principal
+		Quando ele clicar em logout
+		Então o usuario sera deslogado e redirecionado para tela de login
