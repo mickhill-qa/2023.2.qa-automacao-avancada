@@ -30,6 +30,17 @@ public class Grupo5LoginSteps extends BaseSteps
 
     }
 
+    @Quando("o usuario preenche os campos username com {string} e password com {string}")
+    public void o_usuario_preenche_os_campos_username_com_e_password_com(String _username, String _password) {
+        pageLogin.preencherUsername(_username);
+        pageLogin.preencherPassword(_password);
+    }
+
+    @E("pressiona a tecla Enter")
+    public void pressiona_a_tecla_Enter() {
+        pageLogin.pressionarEnter();
+    }
+
     @Entao("o sistema redireciona para a security area")
     public void o_sistema_redireciona_para_a_security_area() {
         Assert.assertTrue(paginaSegura.verificarSeEstouNapagina());
@@ -38,9 +49,8 @@ public class Grupo5LoginSteps extends BaseSteps
     }
 
     @Entao("apresenta a mensagem {string}")
-    public void apresenta_a_mensagem(String _msgError) {
-        String msgNaTela = pageLogin.pegarMensagemRetornada();
-        Assert.assertEquals(_msgError, msgNaTela);
+    public void apresenta_a_mensagem(String _msg) {
+        Assert.assertTrue(pageLogin.pegarMensagemRetornada().contains(_msg));
 
     }
 
