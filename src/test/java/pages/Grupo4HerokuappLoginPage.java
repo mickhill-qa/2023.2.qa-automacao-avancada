@@ -23,6 +23,7 @@ public class Grupo4HerokuappLoginPage extends BasePage {
     public void clicaLogin(){
         driver.findElement(botaoLogin).click();
     }
+    public String pegarUrl() { return driver.getCurrentUrl(); }
 
     //Função para localizar e obter mensagem de erro no logoin
     public String validaErroLogin(){
