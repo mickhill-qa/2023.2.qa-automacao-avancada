@@ -1,5 +1,4 @@
 #language: pt
-@grupo_5_login
 @resetBrowser
 Funcionalidade: Grupo 5 - Login
 
@@ -16,7 +15,6 @@ Funcionalidade: Grupo 5 - Login
     E pressiona a tecla Enter
     Entao o sistema redireciona para a security area
     E apresenta a mensagem "You logged into a secure area!"
-
 
   Esquema do Cenario: Login com credenciais invalidas
     Quando o usuario preenche o campo username com <Username> e o campo password com <Password>

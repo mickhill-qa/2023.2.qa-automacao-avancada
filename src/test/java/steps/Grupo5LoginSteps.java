@@ -1,11 +1,8 @@
-import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Entao;
-import io.cucumber.java.pt.Quando;
+package steps;
+import io.cucumber.java.pt.*;
 import org.junit.Assert;
 import pages.Grupo5LoginPage;
 import pages.Grupo5SecureAreaPage;
-import pages.MickHillInvoiceListEcorePage;
-import pages.MickHillLoginEcorePage;
 import runner.base_class.BaseSteps;
 
 public class Grupo5LoginSteps extends BaseSteps
@@ -30,21 +27,21 @@ public class Grupo5LoginSteps extends BaseSteps
         pageLogin.preencherUsername(_username);
         pageLogin.preencherPassword(_password);
         pageLogin.clicarBtnLogin();
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Entao("o sistema redireciona para a security area")
     public void o_sistema_redireciona_para_a_security_area() {
         Assert.assertTrue(paginaSegura.verificarSeEstouNapagina());
         screenshot();
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Entao("apresenta a mensagem {string}")
     public void apresenta_a_mensagem(String _msgError) {
         String msgNaTela = pageLogin.pegarMensagemRetornada();
         Assert.assertEquals(_msgError, msgNaTela);
-        throw new io.cucumber.java.PendingException();
+
     }
 
 }
