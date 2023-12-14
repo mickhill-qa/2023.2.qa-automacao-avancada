@@ -8,7 +8,7 @@ public class HerokuLoginPage extends BasePage{
     private By inputUsername = By.name("username");
     private By inputPassword = By.name("password");
     private By loginBtn = By.cssSelector("i.fa.fa-2x.fa-sign-in");
-    private By errorMessage = By.xpath("//div[@id='flash' and contains(@class, 'error')]");
+    private By errorMessage = By.id("flash");
 
 
 
@@ -33,12 +33,17 @@ public class HerokuLoginPage extends BasePage{
     }
     public boolean errorMessageIsShown() {
         String errorMessageText = driver.findElement(errorMessage).getText();
-        return errorMessageText.contains("invalid");
+        return errorMessageText.contains("The provided credentials are invalid");
     }
+
     public boolean securePageIsLoaded(){
         String expectedUrl = "https://the-internet.herokuapp.com/secure";
         String currentUrl = driver.getCurrentUrl();
         return currentUrl.equals(expectedUrl);
+    }
+    public boolean errorMessageRequiresAllFields() {
+        String errorMessageText = driver.findElement(errorMessage).getText();
+        return errorMessageText.contains("All the fields are required");
     }
 
 }
