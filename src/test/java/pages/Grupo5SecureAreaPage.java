@@ -15,7 +15,9 @@ public class Grupo5SecureAreaPage extends BasePage {
     public String pegarMensagemRetornada()
     {
         waitElementVisible(mensagemRetornada,5);
-        return driver.findElement(mensagemRetornada).getText();
+        String msgRetorno = driver.findElement(mensagemRetornada).getText();
+        String msgTratada = msgRetorno.trim().replaceAll("\\s+$", "")
+                .replaceAll("×$", "").replaceAll("\\n$", "");
+        return msgTratada;
     }
-
 }

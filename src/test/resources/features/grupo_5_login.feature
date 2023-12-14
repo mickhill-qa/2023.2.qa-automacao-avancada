@@ -1,6 +1,5 @@
 #language: pt
 @grupo_5_login
-@resetBrowser
 Funcionalidade: Grupo 5 - Login
 
   Contexto:
@@ -20,12 +19,10 @@ Funcionalidade: Grupo 5 - Login
 
   Esquema do Cenario: Login com credenciais invalidas
     Quando o usuario preenche o campo username com <Username> e o campo password com <Password>
-    Entao o sistema mostra a mensagem de erro: <Message>
+    Entao o sistema exibe a mensagem de erro: <Message>
     Exemplos:
-      | Username    | Password               | Message                    |
-      | "tomsmith"  | "invalido"             | "Your password is invalid" |
-      | "joaozinho" | "SuperSecretPassword!" | "Your username is invalid" |
-      | ""          | "SuperSecretPassword!" | "Username is required"     |
-      | "tomsmith"  | ""                     | "Password is required"     |
-
-
+      | Username    | Password               | Message                     |
+      | "tomsmith"  | "invalido"             | "Your password is invalid!" |
+      | "joaozinho" | "SuperSecretPassword!" | "Your username is invalid!" |
+      | ""          | "SuperSecretPassword!" | "Username is required!"     |
+      | "tomsmith"  | ""                     | "Password is required!"     |
