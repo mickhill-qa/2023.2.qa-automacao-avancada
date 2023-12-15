@@ -16,13 +16,18 @@ Funcionalidade: Grupo 5 - Login
     Entao o sistema redireciona para a security area
     E apresenta a mensagem "You logged into a secure area!"
 
+  Cenario: Login com password invalido
+    Quando o usuario preenche o campo username com "tomsmith" e o campo password com "invalido"
+    Entao o sistema exibe a mensagem de erro: "Your password is invalid!"
 
-  Esquema do Cenario: Login com credenciais invalidas
-    Quando o usuario preenche o campo username com <Username> e o campo password com <Password>
-    Entao o sistema exibe a mensagem de erro: <Message>
-    Exemplos:
-      | Username    | Password               | Message                     |
-      | "tomsmith"  | "invalido"             | "Your password is invalid!" |
-      | "joaozinho" | "SuperSecretPassword!" | "Your username is invalid!" |
-      | ""          | "SuperSecretPassword!" | "Username is required!"     |
-      | "tomsmith"  | ""                     | "Password is required!"     |
+  Cenario: Login com username invalido
+    Quando o usuario preenche o campo username com "joaozinho" e o campo password com "SuperSecretPassword"
+    Entao o sistema exibe a mensagem de erro: "Your username is invalid!"
+
+  Cenario: Login com username em branco
+    Quando o usuario preenche o campo username com "joaozinho" e o campo password com "SuperSecretPassword"
+    Entao o sistema exibe a mensagem de erro: "Username is required!"
+
+  Cenario: Login com password em branco
+    Quando o usuario preenche o campo username com "tomsmith" e o campo password com ""
+    Entao o sistema exibe a mensagem de erro: "Password is required!"
