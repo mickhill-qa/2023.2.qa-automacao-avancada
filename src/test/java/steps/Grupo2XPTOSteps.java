@@ -4,89 +4,68 @@ import org.junit.Assert;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
-import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import pages.Grupo2XPTOPage;
 import runner.base_class.BaseSteps;
 
 public class Grupo2XPTOSteps extends BaseSteps {
-	
     Grupo2XPTOPage pagina = new Grupo2XPTOPage();
-    
+
     @Dado("que o usuario esta na tela de login")
     public void que_o_usuario_esta_na_tela_de_login() {
-    	  pagina.abrir();
-          screenshot();
-   
+        pagina.abrir();
+        screenshot();
     }
 
+    @Quando("ele insere no botao as credencias {string} e {string}")
+    public void ele_insere_no_botao_as_credenciais(String _username, String _password) {
+        pagina.preencherUsername(_username);
+        pagina.preencherPassword(_password);
+        screenshot();
+    }
 
-   @Quando("ele insere no botao as credencias {string} e {string}")
-   public void ele_insere_no_botao_as_credenciais(String _username, String _password){
-       pagina.preencherUsername(_username);
-       pagina.preencherPassword(_password);
-       screenshot();
-   }
-
-   @Quando("clica no botao Login")
+    @Quando("clica no botao Login")
     public void clica_no_botao_Login(){
-       pagina.clicarEnter();
-   }
+        pagina.clicarOuEnter(true);
+    }
 
-   @Quando("clicar no botao Login")
-   public void clicar_no_botao_login() {
-	   pagina.clicarEnter();
-   }
+    @Entao("o sistema deve ser apresentado uma pagina")
+    public void o_sistema_deve_ser_apresentado_uma_pagina() {
+        Assert.assertTrue(pagina.verificarSeEstouNaPaginaHome());
+        screenshot();
+    }
 
-  @Entao("o sistema deve ser apresentado uma pagina")
-   public void o_sistema_deve_ser_apresentado_uma_pagina(){
-      Assert.assertTrue(pagina.verificarSeEstouNaPaginaHome());
-      screenshot();
-  }
+    @Entao("o sistema exibe a mensagem {string}")
+    public void o_sistema_exibe_a_mensagem(String _message) {
+        String message = pagina.pegarMensagem();
+        Assert.assertEquals(message, _message);
+        screenshot();
+    }
 
-  @Entao("o sistema exibe a mensagem {string}")
-   public void o_sistema_exibe_a_mensagem(String _message){
-     String message = pagina.pegarMensagem();
-     Assert.assertEquals(message, _message);
-     screenshot();
-  }
+    @Quando("ele insere no botão as credenciais {string} e {string}")
+    public void ele_insere_no_botao_as_credencias(String _username, String _password) {
+        pagina.preencherUsername(_username);
+        pagina.preencherPassword(_password);
+        screenshot();
+    }
 
-  @Quando("ele insere no botão as credenciais {string} e {string}")
-   public void ele_insere_no_botao_as_credencias(String _username, String _password){
-      pagina.preencherUsername(_username);
-      pagina.preencherPassword(_password);
-      screenshot();
-   }
+    @Entao("a pagina deve ser mantido a mesma")
+    public void a_pagina_deve_ser_mantido_a_mesma() {
+        Assert.assertTrue(pagina.verificarSeEstouNaPaginaLogin());
+        screenshot();
+    }
 
-   @Entao("a pagina deve ser mantido a mesma")
-   public void a_pagina_deve_ser_mantido_a_mesma(){
-       Assert.assertTrue(pagina.verificarSeEstouNaPaginaLogin());
-       screenshot();
-
-   }
-   @Dado("que o usuario logado esta na pagina principal")
-   public void que_o_usuário_logado_está_na_pagina_principal(String _username, String _password) {
-	   pagina.preencherUsername(_username);
-       pagina.preencherPassword(_password);
-       pagina.clicarEnter();
-      
-   }
-
-   @Quando("ele clicar em logout")
-   public void ele_clicar_em_logout() {
-      
-   }
-
-   @Então("o usuario sera deslogado e redirecionado para tela de login")
-   public void o_usuario_sera_deslogado_e_redirecionado_para_tela_de_login() {
-     
-   }
+    @Quando("clica no botao Enter")
+    public void clica_no_botao_Enter() {
+        pagina.clicarOuEnter(false);
+    }
 
    @Quando("ele insere no botao as credenciais {string} e {string}")
    public void ele_insere_no_botao_as_credenciais_e(String _username, String _password) {
 	   pagina.preencherUsername(_username);
        pagina.preencherPassword(_password);
+       screenshot();
    }
 
-
 }
+

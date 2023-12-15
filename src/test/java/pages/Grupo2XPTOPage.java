@@ -7,11 +7,11 @@ public class Grupo2XPTOPage extends BasePage {
     private String urlPaginaLogin = "https://the-internet.herokuapp.com/login";
     private By username = By.id("username");
     private By password = By.id("password");
-    private By message = By.id("flash");
     private By btnLogin = By.cssSelector("i.fa.fa-2x.fa-sign-in");
+    private By message = By.id("flash");
     private String urlPaginaHome = "https://the-internet.herokuapp.com/secure";
     private By btnLogout = By.xpath("//*[@id='content']/div/a");
-    
+
 
     public void abrir(){
         driver.get(urlPaginaLogin);
@@ -25,8 +25,12 @@ public class Grupo2XPTOPage extends BasePage {
         driver.findElement(password).sendKeys(_password);
     }
 
-    public void clicarEnter() {
+    public void clicarLogin() {
     	  driver.findElement(btnLogin).click();
+    }
+
+    public void clicarEnter() {
+        driver.findElement(btnLogin).click();
     }
 
     public String pegarMensagem() {
@@ -42,6 +46,14 @@ public class Grupo2XPTOPage extends BasePage {
     public Boolean verificarSeEstouNaPaginaLogin() {
         String urlAtual = driver.getCurrentUrl();
         return urlAtual.contains(urlPaginaLogin);
+    }
+
+    public void clicarOuEnter(Boolean devoClicar){
+        if(devoClicar){
+             clicarLogin();
+        }else{
+            clicarEnter();
+        }
     }
 
 
