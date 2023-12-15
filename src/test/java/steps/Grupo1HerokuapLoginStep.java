@@ -21,6 +21,7 @@ public class Grupo1HerokuapLoginStep extends BaseSteps {
 
     @Quando("o usuario preencher o Username {string}")
     public void o_usuario_preencher_o_username(String username) {
+
         pageHeroLogin.UserLogin(username);
     }
 
@@ -34,8 +35,8 @@ public class Grupo1HerokuapLoginStep extends BaseSteps {
 
     @Entao("o sistema apresenta a mensagem {string}")
     public void o_sistema_apresenta_a_mensagem(String validamsg) {
-        pageHeroLogin.validaMsg().contains( "You logged into a secure area!");
-
+        Assert.assertTrue(pageHeroLogin.validaMsg().contains(validamsg));
+        screenshot();
     }
 
     @Quando("o usuario nao preencher o Username")
@@ -49,29 +50,11 @@ public class Grupo1HerokuapLoginStep extends BaseSteps {
         pageHeroLogin.clickBtnLogin();
     }
 
-//    @Dado("que o usuario realizou o login com sucesso")
-//    public void que_o_usuario_realizou_o_login_com_sucesso() {
-//
-//    }
-
     @Dado("que o usuario nao esta logado")
     public void que_o_usuario_nao_esta_logado() {
         pageHeroLogin.UserLogin("");
         pageHeroLogin.PassLogin("");
     }
 
-    @Quando("o usuario tentar acessar o sistema pela url da area segura")
-    public void o_usuario_tentar_acessar_o_sistema_pela_url_da_area_segura() {
-
-    }
-
-    @Entao("o sistema deve redirecionar o usuario para a pagina de login")
-    public void o_sistema_deve_redirecionar_o_usuario_para_a_pagina_de_login() {
-
-    }
-    @E("o sistema deve exibir a mensagem {string}")
-    public void o_sistema_deve_exibir_a_mensagem(String string) {
-
-    }
 }
 

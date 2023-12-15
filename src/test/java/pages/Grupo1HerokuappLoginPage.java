@@ -34,8 +34,8 @@ public class Grupo1HerokuappLoginPage extends BasePage {
     }
 
     public String validaMsg() {
+       return driver.findElement(getValida_msg()).getText();
 
-        return driver.findElement(getValida_msg()).getText();
     }
 
     public void acessoSemLogar() {
