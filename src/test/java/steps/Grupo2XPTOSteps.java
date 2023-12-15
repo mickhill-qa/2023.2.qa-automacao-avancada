@@ -49,12 +49,32 @@ public class Grupo2XPTOSteps extends BaseSteps {
         screenshot();
     }
 
-    @Entao("a pagina deve ser mantido a mesma")
-    public void a_pagina_deve_ser_mantido_a_mesma() {
+   @Entao("a pagina deve ser mantido a mesma")
+   public void a_pagina_deve_ser_mantido_a_mesma(){
+       Assert.assertTrue(pagina.verificarSeEstouNaPaginaLogin());
+       screenshot();
+
+   }
+   @Dado("que o usuario logado esta na pagina principal")
+   public void que_o_usuário_logado_está_na_pagina_principal() {
+        pagina.preencherUsername("tomsmith");
+        pagina.preencherPassword("SuperSecretPassword!");
+        screenshot();
+        pagina.clicarEnter();
+        screenshot();
+   }
+
+   @Quando("ele clicar em logout")
+   public void ele_clicar_em_logout() {
+      pagina.logout();
+      screenshot();
+   }
+
+   @Entao("o usuario sera deslogado e redirecionado para tela de login")
+   public void o_usuario_sera_deslogado_e_redirecionado_para_tela_de_login() {
         Assert.assertTrue(pagina.verificarSeEstouNaPaginaLogin());
         screenshot();
-    }
-
+   }
     @Quando("clica no botao Enter")
     public void clica_no_botao_Enter() {
         pagina.clicarOuEnter(false);
