@@ -32,7 +32,7 @@ Contexto:
     
        
          Quando ele insere no botao as credenciais "tomsmith" e "SuperSecretPassword!"
-         E clica no botao Login
+         E e presionar a tecla Enter
          Então o sistema deve ser apresentado uma pagina
          E o sistema exibe a mensagem "You logged into a secure area!"
          

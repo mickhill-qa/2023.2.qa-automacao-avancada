@@ -65,27 +65,41 @@ public class Grupo2XPTOSteps extends BaseSteps {
 
    }
    @Dado("que o usuario logado esta na pagina principal")
-   public void que_o_usuário_logado_está_na_pagina_principal(String _username, String _password) {
-	   pagina.preencherUsername(_username);
-       pagina.preencherPassword(_password);
+   public void que_o_usuário_logado_está_na_pagina_principal() {
+	   pagina.preencherUsername("tomsmith");
+       pagina.preencherPassword("SuperSecretPassword!");
+       screenshot();
        pagina.clicarEnter();
+       screenshot();
       
    }
 
    @Quando("ele clicar em logout")
    public void ele_clicar_em_logout() {
+      pagina.logout();
+      screenshot();
+
       
    }
 
    @Então("o usuario sera deslogado e redirecionado para tela de login")
    public void o_usuario_sera_deslogado_e_redirecionado_para_tela_de_login() {
      
+	      Assert.assertTrue(pagina.verificarSeEstouNaPaginaLogin());
+	      screenshot();
    }
 
    @Quando("ele insere no botao as credenciais {string} e {string}")
    public void ele_insere_no_botao_as_credenciais_e(String _username, String _password) {
 	   pagina.preencherUsername(_username);
        pagina.preencherPassword(_password);
+       screenshot();
+   }
+
+   @Quando("e presionar a tecla Enter")
+   public void e_presionar_a_tecla_enter() {
+       pagina.keyENTER();
+	   screenshot();
    }
 
 
