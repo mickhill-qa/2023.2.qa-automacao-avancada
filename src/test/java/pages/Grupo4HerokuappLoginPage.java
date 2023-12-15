@@ -7,7 +7,7 @@ public class Grupo4HerokuappLoginPage extends BasePage {
 
     private String url = "https://the-internet.herokuapp.com/login";
     private By campoUserName = By.id("username");
-    private By campoPassword = By.cssSelector("password");
+    private By campoPassword = By.id("password");
     private By botaoLogin = By.xpath("//*[@id=\"login\"]/button/i");
     private By mensagemErro = By.id("flash");
 

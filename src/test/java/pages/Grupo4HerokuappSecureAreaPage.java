@@ -4,18 +4,11 @@ import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
 public class Grupo4HerokuappSecureAreaPage extends BasePage {
-    private String url = "https://the-internet.herokuapp.com/secure";
-    private By msgError = By.id("#flash");
-    private By btnLogout = By.cssSelector("#content > div > a");
-    public void abreNavegador() {
-        driver.get(url);
-    }
+    private By msgConfirmed = By.id("flash");
 
     public String pegaMensagem() {
-        waitElementVisible(msgError,5);
-        return driver.findElement(msgError).getText();
+        waitElementVisible(msgConfirmed,5);
+        return driver.findElement(msgConfirmed).getText();
     }
-    public void clicarLogout() {
-        driver.findElement(btnLogout).click();
-    }
+    public String pegarUrl() { return driver.getCurrentUrl(); }
 }
