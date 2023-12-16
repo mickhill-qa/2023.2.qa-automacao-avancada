@@ -47,4 +47,12 @@ public class HerokuLoginSteps {
         assertTrue(loginPage.errorMessageRequiresAllFields());
         screenshot();
     }
+
+    @When("the user inserts an invalid {string} and~or {string} and clicks on the login button")
+    public void theUserInsertsAnInvalidAndOrAndClicksOnTheLoginButton(String username, String password) {
+        loginPage.fillUsername(username);
+        loginPage.fillPassword(password);
+        loginPage.loginBtnClick();
+        screenshot();
+    }
 }
