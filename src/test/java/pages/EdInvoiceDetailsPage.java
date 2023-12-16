@@ -7,21 +7,22 @@ import runner.base_class.BasePage;
 
 public class EdInvoiceDetailsPage extends BasePage {
     By hotelName = By.cssSelector("h4.mt-5");
-    By invoiceDateLocator = By.xpath("//li[span[@class='font-weight-bold' and contains(text(), 'Invoice Date:')]]");
-    By invoiceDueDateLocator = By.xpath("//li[span[@class='font-weight-bold' and contains(text(), 'Due Date:')]]");
-    By invoiceNumberLocator = By.xpath("//h6[@class='mt-2' and contains(text(), 'Invoice #110 details')]");
-    By bookingCodeLocator = By.xpath("//td[text()='0875']");
+    By invoiceDateLocator = By.cssSelector("body > section > div > ul > li");
+    By invoiceDueDateLocator = By.cssSelector("body > section > div > ul > li:nth-child(2)");
+    By invoiceNumberLocator = By.cssSelector("h6");
+    By bookingCodeLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
     By customerDetailsLocator = By.cssSelector("body > section > div > div");
-    By roomLocator = By.xpath("//td[text()='Superior Double']");
-    By checkInLocator = By.xpath("//td[text()='14/01/2018']");
-    By checkOutLocator = By.xpath("//td[text()='15/01/2018']");
-    By totalStayCountLocator = By.xpath("//td[text()='1']");
-    By totalStayAmountLocator = By.xpath("//td[text()='$150']");
-    By depositNowLocator = By.xpath("//td[text()='USD $20.90']");
-    By taxAndVatLocator = By.xpath("//td[text()='USD $19']");
-    By totalAmountLocator = By.xpath("//td[text()='USD $209']");
+    By roomLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
+    By checkInLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
+    By checkOutLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
+    By totalStayCountLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
+    By totalStayAmountLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
+    By depositNowLocator = By.cssSelector("tbody > tr > td:nth-child(1)");
+    By taxAndVatLocator = By.cssSelector("tbody > tr > td:nth-child(2)");
+    By totalAmountLocator = By.cssSelector("tbody > tr > td:nth-child(3)");
 
-
+// Some variables get the same css selection, but different parts of it are selected by the methods below.
+    // They were created separately for maintenance purposes
     public String getInvoiceDate() {
         WebElement invoiceDateElement = driver.findElement(invoiceDateLocator);
         String invoiceDateText = invoiceDateElement.getText();
@@ -45,7 +46,7 @@ public class EdInvoiceDetailsPage extends BasePage {
     }
 
     public String getBookingCode(){
-        WebElement actualBookingCode = driver.findElement(bookingCodeLocator);
+        WebElement actualBookingCode = driver.findElements(bookingCodeLocator).get(0);
         return actualBookingCode.getText();
     }
     public String getCustomerDetails() {
@@ -53,31 +54,31 @@ public class EdInvoiceDetailsPage extends BasePage {
         return actualCustomerDetails.getText();
     }
     public String getRoom(){
-        WebElement actualRoom = driver.findElement(roomLocator);
+        WebElement actualRoom = driver.findElements(roomLocator).get(1);
         return actualRoom.getText();
     }
     public String getCheckIn(){
-        WebElement actualCheckIn = driver.findElement(checkInLocator);
+        WebElement actualCheckIn = driver.findElements(checkInLocator).get(4);
         return  actualCheckIn.getText();
     }
     public String getCheckOut(){
-        WebElement actualCheckOut = driver.findElement(checkOutLocator);
+        WebElement actualCheckOut = driver.findElements(checkOutLocator).get(5);
         return actualCheckOut.getText();
     }
     public String getTotalStayCount(){
-        WebElement actualTotalStay = driver.findElement(totalStayCountLocator);
+        WebElement actualTotalStay = driver.findElements(totalStayCountLocator).get(2);
         return actualTotalStay.getText();
     }
     public String getTotalStayAmount(){
-        WebElement actualTotalStayAmount = driver.findElement(totalStayAmountLocator);
+        WebElement actualTotalStayAmount = driver.findElements(totalStayAmountLocator).get(3);
         return actualTotalStayAmount.getText();
     }
     public String getDepositNow(){
-        WebElement actualDepositNow = driver.findElement(depositNowLocator);
+        WebElement actualDepositNow = driver.findElements(depositNowLocator).get(6);
         return actualDepositNow.getText();
     }
     public String getTax(){
-        WebElement actualTax = driver.findElement(taxAndVatLocator);
+        WebElement actualTax = driver.findElements(taxAndVatLocator).get(6);
         return actualTax.getText();
     }
     public String getTotalAmount(){
