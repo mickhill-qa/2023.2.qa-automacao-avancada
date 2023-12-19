@@ -4,7 +4,7 @@ Feature: Team 3 - SeuBarriga Login
 
   Scenario: 001 - Login (Positive)
     Given the SeuBarriga login page is loaded
-    When the user inserts valid credentials and clicks on the login button
+    When the user inserts valid credentials "<itlins@yopmail.com>" and "<12345>" and clicks on the login button
     Then the system will redirect you to the home page
 
   Scenario Outline: 002/003 - Login (Empty) - Fields are Required
