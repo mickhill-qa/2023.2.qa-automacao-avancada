@@ -17,6 +17,7 @@ Funcionalidade: Mick Hill - Ecore Login
         Quando o usuario prenecher as credenciais "demouser" e "abc123"
         Entao o sistema redireciona para a lista de faturas
 
+    @resetBrowser
     Esquema do Cenario: Login com Credenciais invalidas
         Quando o usuario prenecher as credenciais <Username> e <Password>
         Entao o sistema mostra a mensagem de erro: "Wrong username or password."
