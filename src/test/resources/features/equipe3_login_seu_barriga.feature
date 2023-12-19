@@ -1,15 +1,15 @@
-Feature: Team 3 - Heroku Login
+Feature: Team 3 - SeuBarriga Login
 
   Background: The user is already registered on the system and will try to login
 
   Scenario: 001 - Login (Positive)
-    Given the login page is loaded
+    Given the SeuBarriga login page is loaded
     When the user inserts valid credentials and clicks on the login button
     Then the system will redirect you to the home page
 
-  Scenario Outline: 002/003 - Login (Invalid) - Fields are Required
-    Given the login page is loaded
-    When the user inserts an invalid "<username>" and "<password>" and clicks on the login button
+  Scenario Outline: 002/003 - Login (Empty) - Fields are Required
+    Given the SeuBarriga login page is loaded
+    When the user leaves either "<username>" and-or "<password>" empty and tries to login
     Then the system a message that says all the fields are required
     Examples:
       | username  | password |
@@ -17,11 +17,10 @@ Feature: Team 3 - Heroku Login
       | itlins@yopmail.com  |                |
 
   Scenario Outline: 004/005/006 - Login (Invalid) Invalid credentials
-    Given the login page is loaded
-    When the user inserts an invalid "<username>" and~or "<password>" and clicks on the login button
-    Then the system shows the error message
+    Given the SeuBarriga login page is loaded
+    When the user inserts an invalid "<username>" and~or "<password>" and clicks on
+    Then the system shows a message informing the error
     Examples:
       | username  | password |
-      | TomSmith  | SuperSecretPassword! |
-      | tomsmith  |     invalidpassword  |
-      | TomSmith  |     invalidpassword  |
+      | itlins@yopmail.com  | 123456! |
+      | itlins@yopmail.co  |     12345  |
