@@ -13,7 +13,11 @@ public class Equipe3HackathonSeuBarrigaLogin extends BasePage {
 
     private By botao_login = By.cssSelector("button[class*='btn-primary']");
 
+    public void entrar () {
+        driver.get(url);
+    }
 
+    
 
 
 }
