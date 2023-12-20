@@ -9,13 +9,9 @@ public class LoginGrupo2XPTOPage extends BasePage {
 	    private By inputEmail = By.id("email");
 	    private By inputSenha = By.id("senha");
 	    private By btnEntrar = By.cssSelector("button.btn.btn-primary");
-	    private By alert = By.xpath("//div[@class ='alert alert-danger']");
-	    private By alertSucesso = By.xpath("//div[@class =' alert alert-success']");
-	    private String urlPaginaHome = "https://seubarriga.wcaquino.me/logar"; 
-	    
-	   
-	    
-	    
+	    private By alert = By.cssSelector("div.alert.alert-danger");
+	    private By alertSucesso =By.cssSelector("div.alert.alert-success");
+	       
 
 	    public void abrir() {
 	        driver.get(url);
@@ -37,7 +33,7 @@ public class LoginGrupo2XPTOPage extends BasePage {
 	    	
 	    }
 	    
-	    public  String alert () {
+	    public  String alertDanger() {
 	    	
 	    	String msn = driver.findElement(alert).getText().toString();
 	    	return msn;
@@ -45,18 +41,19 @@ public class LoginGrupo2XPTOPage extends BasePage {
 	    }
 	    public  String alertSucesso () {
 	    	
-	    	  	String msn = driver.findElement(alert).getText().toString();
+	    	  	String msn = driver.findElement(alertSucesso).getText().toString();
 	    	return msn;
 	    			
 	    }
 	    
 		public Boolean verificarSeEstouNaPaginaHome() {
-			String urlAtual = driver.getCurrentUrl();
-			return urlAtual.contains(urlPaginaHome);
+			String urlAtual = driver.getTitle();
+			return urlAtual.contains("Seu Barriga - Home");
 		}
 
 		public Boolean verificarSeEstouNaPaginaLogin() {
-			String urlAtual = driver.getCurrentUrl();
-			return urlAtual.contains(url);
+			String urlAtual = driver.getTitle();
+			return urlAtual.contains("Seu Barriga - Log in");
+			
 		}
 }

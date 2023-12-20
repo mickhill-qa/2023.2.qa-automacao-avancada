@@ -35,15 +35,15 @@ public class LoginGrupo2XPTOStep  extends BaseSteps{
 	}
 
 	@Então("o sistema deve apresentado a area de login")
-	public void o_sistema_deve_apresentado_a_area_de_login() {
-
+	public void o_sistema_deve_apresentado_a_area_de_login() throws InterruptedException {
+		Thread.sleep(2000);
 	    Assert.assertTrue(login.verificarSeEstouNaPaginaHome());
 	       screenshot();
 	}
 
 	@Então("o sistema exibe a mensagem {string}")
-	public void o_sistema_exibe_a_mensagem(String alert) {
-
+	public void o_sistema_exibe_a_mensagem(String alert) throws InterruptedException {
+		Thread.sleep(2000);
 		String msn = login.alertSucesso();
 		 Assert.assertEquals(msn, alert);
 	        screenshot();
@@ -59,9 +59,9 @@ public class LoginGrupo2XPTOStep  extends BaseSteps{
 		
 	}
 
-	@Então("a pagina deve ser mantido a mesma")
-	public void a_pagina_deve_ser_mantido_a_mesma() {
-		
+	@Então("a pagina deve ser mantido")
+	public void a_pagina_deve_ser_mantido() throws InterruptedException {
+		Thread.sleep(2000);
 	    Assert.assertTrue(login.verificarSeEstouNaPaginaLogin());
 	       screenshot();
 	}
@@ -73,16 +73,34 @@ public class LoginGrupo2XPTOStep  extends BaseSteps{
 	}
 
 	@Então("o sistema deve ser apresentado uma pagina")
-	public void o_sistema_deve_ser_apresentado_uma_pagina() {
+	public void o_sistema_deve_ser_apresentado_uma_pagina() throws InterruptedException {
 	
-		
-		
+		Thread.sleep(2000);
+		  Assert.assertTrue(login.verificarSeEstouNaPaginaLogin());
+		  screenshot();
 	}
 
 	@Então("a pagina deve se manter")
-	public void a_pagina_deve_se_manter() {
+	public void a_pagina_deve_se_manter() throws InterruptedException {
+		
+		Thread.sleep(2000);
 		   Assert.assertTrue(login.verificarSeEstouNaPaginaHome());
 	       screenshot();
+	}
+	
+	@Então("o sistema exibe a mensagem de execao {string}")
+	public void o_sistema_exibe_a_mensagem_de_execao(String alert) throws InterruptedException {
+		Thread.sleep(2000);
+		String msn = login.alertDanger();
+		 Assert.assertEquals(msn, alert);
+	        screenshot();
+	}
+	
+	@Então("a pagina deve deve em login")
+	public void a_pagina_deve_deve_em_login() throws InterruptedException {
+		Thread.sleep(2000);
+		  Assert.assertTrue(login.verificarSeEstouNaPaginaLogin());
+		  screenshot();
 	}
 
 }
