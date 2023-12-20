@@ -12,6 +12,7 @@ import runner.base_class.BaseSteps;
 public class Grupo1LoginSeuBarrigaSteps extends BaseSteps {
     Grupo1LoginSeuBarrigaPages loginPage = new Grupo1LoginSeuBarrigaPages();
     Grupo1HomeSeuBarrigaPage homePage = new Grupo1HomeSeuBarrigaPage();
+
     @Dado("que o usuario esta na tela de login")
     public void que_o_usuario_esta_na_tela_de_login() {
         loginPage.validaPaginaLogin();
@@ -43,15 +44,14 @@ public class Grupo1LoginSeuBarrigaSteps extends BaseSteps {
         loginPage.setSenha("123456");
         screenshot();
     }
-    @Entao("o sistema mostrara a mensagem {string}")
-    public void o_sistema_mostrara_a_mensagem(String mensagem) {
-        Assert.assertEquals(loginPage.validaMsgErro(), "Problemas com o login do usuário");
-        screenshot();
 
-        {
-            String mensagem = loginPage.validaMsgErro();
-            Assert.assertEquals(mensagem);
+    @Entao("o sistema mostrara a mensagem {string}")
+    public void o_sistema_mostrara_a_mensagem(String _msgError) {
+        String msgNaTela = loginPage.validaMsgErro();
+        Assert.assertEquals(_msgError, msgNaTela);
+        screenshot();
     }
+
     @Quando("o usuario preencher o campo email")
     public void o_usuario_preencher_o_campo_email() {
         loginPage.setEmail("edinetesousa@gmail.com");
@@ -65,9 +65,8 @@ public class Grupo1LoginSeuBarrigaSteps extends BaseSteps {
 
     @Quando("o usuario preencher o email com dados invalidos")
     public void o_usuario_preencher_o_email_com_dados_invalidos() {
-        loginPage.setEmail("edinetesousa.gmail.com");
+        loginPage.setEmail("edi@gmail.com");
     }
-
     @Quando("preencher o campo email")
     public void preencher_o_campo_email() {
         loginPage.setEmail("edinetesousa@gmail.com");

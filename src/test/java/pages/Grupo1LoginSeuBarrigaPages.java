@@ -10,7 +10,9 @@ public class Grupo1LoginSeuBarrigaPages extends BasePage {
     private By campoEmail = By.id("email");
     private By campoSenha = By.id("senha");
     private By btnClicar = By.cssSelector("button[type=submit]");
-    private By validaMsg = By.className("alert");
+    private By validaMsg = By.xpath("/html/body/div[1]");
+
+    private By alertaErro = By.cssSelector("[role='alert']");
 
     public void preencherLogin(String email, String senha) {
         driver.findElement(campoEmail).sendKeys(email == null ? "" : email);

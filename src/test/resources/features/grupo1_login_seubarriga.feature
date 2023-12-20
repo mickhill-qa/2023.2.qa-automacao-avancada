@@ -22,7 +22,7 @@ Funcionalidade: Login no Site seu Barriga
     E clicar no botao entrar
     Entao o sistema mostrara a mensagem "Senha é um campo obrigatório"
 
-  Cenario: Login com email invalido
+  Cenario: Login com email nao cadastrado
     Quando o usuario preencher o email com dados invalidos
     E o usuario preeencher o campo senha
     E clicar no botao entrar
