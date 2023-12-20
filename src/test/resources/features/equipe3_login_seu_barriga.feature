@@ -12,11 +12,11 @@ Feature: Team 3 - SeuBarriga Login
   Scenario Outline: 002/003 - Login (Empty) - Fields are Required
     Given the SeuBarriga login page is loaded
     When the user leaves either "<username>" and-or "<password>" empty and tries to login
-    Then the system a message that says all the fields are required
+    Then the system brings a "<message>" that says the fields that are mandatory
     Examples:
-      | username            | password       |
-      |                     |    12345       |
-      | itlins@yopmail.com  |                |
+      | username            | password       | message                      |
+      |                     |    12345       | Email é um campo obrigatório |
+      | itlins@yopmail.com  |                | Senha é um campo obrigatório |
 
   @c3
   Scenario Outline: 004/005/006 - Login (Invalid) Invalid credentials

@@ -50,9 +50,17 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
         return true;
     }
 
+    public boolean email_senha_obrigatorio(String mensagem){
+        waitElementVisible(no_sucess_verification, 30);
+        String verif = mensagem;
+        String texto = driver.findElement(no_sucess_verification).getText();
+        Assert.assertEquals(verif, texto);
+        return true;
+    }
+
     public boolean no_sucess (){
         waitElementVisible(no_sucess_verification, 30);
-        String verif = "Credenciais estão Incorretas";
+        String verif = "Problemas com o login do usuário";
         String texto = driver.findElement(no_sucess_verification).getText();
         Assert.assertEquals(verif, texto);
         return true;
