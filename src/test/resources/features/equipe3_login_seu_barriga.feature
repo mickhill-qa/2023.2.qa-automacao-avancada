@@ -24,6 +24,6 @@ Feature: Team 3 - SeuBarriga Login
     When the user inserts an invalid "<username>" and~or "<password>" and clicks on
     Then the system shows a message informing the error
     Examples:
-      | username  | password |
-      | itlins@yopmail.com  | 123456! |
-      | itlins@yopmail.co  |     12345  |
+      | username            | password          |
+      | itlins@yopmail.com  | 123456!           |
+      | itlins@yopmail.co   | 12345             |
