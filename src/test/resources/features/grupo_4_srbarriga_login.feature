@@ -14,7 +14,7 @@
     Cenario: Login de sucesso apertando Enter
       Quando o usuario preenche o email "testegrupo4@gmail.com"
       E o usuario preeche a senha "teste123"
-      E aperta o botao de entrar
+      E aperta a tecla enter
       Entao ele redireciona para pagina incial
 
     Cenario: Login email vazia
@@ -33,10 +33,10 @@
       Quando o usuario preenche o email "emailerrado@gmail.com"
       E o usuario preeche a senha "teste123"
       E aperta o botao de entrar
-      Entao ele exibe a mensagem de erro "Problemas com o login do usuário"
+      Entao ele exibe a mensagem de erro "Usuário ou senha incorreto. Tente novamente."
 
     Cenario: Login com email correto senha incorreta
       Quando o usuario preenche o email "testegrupo4@gmail.com"
       E o usuario preeche a senha "senhaerrado"
       E aperta o botao de entrar
-      Entao ele exibe a mensagem de erro "Problemas com o login do usuário"
+      Entao ele exibe a mensagem de erro "Usuário ou senha incorreto. Tente novamente."
