@@ -27,4 +27,7 @@ public class GooglePesquisaPage extends BasePage {
     public void clicarBtnPesquisar() {
         driver.findElement(btnPesquisar).click();
     }
+
+    
+    
 }

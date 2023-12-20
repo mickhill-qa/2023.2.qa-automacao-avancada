@@ -9,7 +9,7 @@ Funcionalidade: Equipe-2 - Login Seu Barriga
               
      Quando ele insere no botao as credenciais "irede20232@teste.com" e "1q2w3e!Q@W#E"
      E clica no botao Entrar
-     Então o sistema deve ser apresentado a pagina principal do sistema
+     Então o sistema deve apresentado a area de login
      E o sistema exibe a mensagem "Bem vindo, hachathon!"
         
   Esquema do Cenario:  Autenticacao com usuario e senha invalidos
@@ -29,7 +29,7 @@ Funcionalidade: Equipe-2 - Login Seu Barriga
 
      Quando ele insere no botao as credenciais "irede20232@teste.com" e "1q2w3e!Q@W#E"
      E clica no botao Enter
-     Então o sistema deve ser apresentado uma pagina
+       Então o sistema deve apresentado a area de login
      E o sistema exibe a mensagem "Bem vindo, hachathon!"
 
          
