@@ -47,5 +47,4 @@ public class Grupo5LoginSteps extends BaseSteps {
         Assert.assertEquals(_message, loginPage.pegarMensagemRetornada());
         screenshot();
     }
-
 }
