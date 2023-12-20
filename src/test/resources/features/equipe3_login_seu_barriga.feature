@@ -4,7 +4,7 @@ Feature: Team 3 - SeuBarriga Login
 
   Scenario: 001 - Login (Positive)
     Given the SeuBarriga login page is loaded
-    When the user inserts valid credentials "itlins@yopmail.com" and "12345" and clicks on the login button
+    When the user inserts valid credentials and clicks on the login button
     Then the system will redirect you to the home page
 
   Scenario Outline: 002/003 - Login (Empty) - Fields are Required
@@ -22,5 +22,5 @@ Feature: Team 3 - SeuBarriga Login
     Then the system shows a message informing the error
     Examples:
       | username  | password |
-      | itlins@yopmail.com  |    123456! |
-      | itlins@yopmail.co   |     12345  |
+      | itlins@yopmail.com  | 123456! |
+      | itlins@yopmail.co  |     12345  |
