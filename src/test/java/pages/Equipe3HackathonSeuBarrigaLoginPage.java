@@ -28,18 +28,22 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
     }
 
     public void fillUsername(String _username) {
+        waitElementVisible(campo_email, 30);
         driver.findElement(campo_email).sendKeys(_username);
     }
 
     public void fillPassword(String _password) {
+        waitElementVisible(campo_senha, 30);
         driver.findElement(campo_senha).sendKeys(_password);
     }
 
     public void botao_login (){
+        waitElementVisible(botao_login, 30);
         driver.findElement(botao_login).click();
     }
 
     public boolean verificação_login_sucess () {
+        waitElementVisible(home_page_verification, 30);
         String verif = "Bem vindo, Luana Vieira Lins!";
         String texto = driver.findElement(home_page_verification).getText();
         Assert.assertEquals(verif, texto);
@@ -47,7 +51,8 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
     }
 
     public boolean no_sucess (){
-        String verif = "Credenciais estão erradas";
+        waitElementVisible(no_sucess_verification, 30);
+        String verif = "Credenciais estão Incorretas";
         String texto = driver.findElement(no_sucess_verification).getText();
         Assert.assertEquals(verif, texto);
         return true;
