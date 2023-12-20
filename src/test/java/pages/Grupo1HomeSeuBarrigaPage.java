@@ -9,10 +9,4 @@ public class Grupo1HomeSeuBarrigaPage extends BasePage {
     public String validaHome(){
        return driver.findElement(validaHome).getText();
     }
-    public String getErro()
-    {
-        waitElementVisible(validaHome,5);
-        return driver.findElement(validaHome).getText();
-    }
-
 }

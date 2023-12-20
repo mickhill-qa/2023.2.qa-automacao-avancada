@@ -8,7 +8,6 @@ import pages.Grupo1HomeSeuBarrigaPage;
 import pages.Grupo1LoginSeuBarrigaPages;
 import runner.base_class.BaseSteps;
 
-
 public class Grupo1LoginSeuBarrigaSteps extends BaseSteps {
     Grupo1LoginSeuBarrigaPages loginPage = new Grupo1LoginSeuBarrigaPages();
     Grupo1HomeSeuBarrigaPage homePage = new Grupo1HomeSeuBarrigaPage();
@@ -67,6 +66,7 @@ public class Grupo1LoginSeuBarrigaSteps extends BaseSteps {
     public void o_usuario_preencher_o_email_com_dados_invalidos() {
         loginPage.setEmail("edi@gmail.com");
     }
+
     @Quando("preencher o campo email")
     public void preencher_o_campo_email() {
         loginPage.setEmail("edinetesousa@gmail.com");
@@ -77,5 +77,4 @@ public class Grupo1LoginSeuBarrigaSteps extends BaseSteps {
         loginPage.setSenha("@#$%");
         screenshot();
     }
-
 }
