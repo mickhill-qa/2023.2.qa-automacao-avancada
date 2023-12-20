@@ -65,6 +65,4 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
         Assert.assertEquals(verif, texto);
         return true;
     }
-
-
 }

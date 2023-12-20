@@ -28,7 +28,6 @@ public class Equipe3SeuBarrigaLoginSteps extends BaseSteps {
         loginPage.botao_login();
         screenshot();
     }
-
     @When("the user inserts an invalid {string} and~or {string} and clicks on")
     public void the_user_inserts_an_invalid_and_or_and_clicks_on(String email, String senha) {
         loginPage.fillUsername(email);
@@ -36,7 +35,6 @@ public class Equipe3SeuBarrigaLoginSteps extends BaseSteps {
         loginPage.botao_login();
         screenshot();
     }
-
     @Then("the system will redirect you to the home page")
     public void the_system_will_redirect_you_to_the_home_page() {
         Assert.assertTrue(loginPage.verificação_login_sucess());
@@ -52,6 +50,4 @@ public class Equipe3SeuBarrigaLoginSteps extends BaseSteps {
         Assert.assertTrue(loginPage.no_sucess());
         screenshot();
     }
-
 }
-
