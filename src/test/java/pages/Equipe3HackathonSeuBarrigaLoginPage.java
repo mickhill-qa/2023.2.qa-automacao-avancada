@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import runner.base_class.BasePage;
 
@@ -14,6 +15,8 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
     private By botao_login = By.cssSelector("button[class*='btn-primary']");
 
     private By home_page_verification = By.cssSelector("div[class*='alert-success']");
+
+    private  By no_sucess_verification = By.cssSelector("div[class*='alert-danger']");
 
     public void entrar () {
         driver.get(url);
@@ -36,8 +39,18 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
         driver.findElement(botao_login).click();
     }
 
-    public void verificação_login_sucess () {
+    public boolean verificação_login_sucess () {
+        String verif = "Bem vindo, Luana Vieira Lins!";
+        String texto = driver.findElement(home_page_verification).getText();
+        Assert.assertEquals(verif, texto);
+        return true;
+    }
 
+    public boolean no_sucess (){
+        String verif = "Credenciais estão erradas";
+        String texto = driver.findElement(no_sucess_verification).getText();
+        Assert.assertEquals(verif, texto);
+        return true;
     }
 
 

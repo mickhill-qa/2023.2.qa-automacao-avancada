@@ -19,32 +19,34 @@ public class Equipe3SeuBarrigaLoginSteps extends BaseSteps {
         loginPage.fillUsername("itlins@yopmail.com");
         loginPage.fillPassword("12345");
         loginPage.botao_login();
+        screenshot();
     }
     @When("the user leaves either {string} and-or {string} empty and tries to login")
-    public void the_user_leaves_either_and_or_empty_and_tries_to_login(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void the_user_leaves_either_and_or_empty_and_tries_to_login(String email, String senha) {
+        loginPage.fillUsername(email);
+        loginPage.fillPassword(senha);
+        loginPage.botao_login();
+        screenshot();
     }
 
     @When("the user inserts an invalid {string} and~or {string} and clicks on")
-    public void the_user_inserts_an_invalid_and_or_and_clicks_on(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void the_user_inserts_an_invalid_and_or_and_clicks_on(String email, String senha) {
+        loginPage.fillUsername(email);
+        loginPage.fillPassword(senha);
+        loginPage.botao_login();
+        screenshot();
     }
 
     @Then("the system will redirect you to the home page")
     public void the_system_will_redirect_you_to_the_home_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(loginPage.verificação_login_sucess());
+        screenshot();
     }
     @Then("the system shows a message informing the error")
     public void the_system_shows_a_message_informing_the_error() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(loginPage.no_sucess());
+        screenshot();
     }
-
-
-
 
 }
 

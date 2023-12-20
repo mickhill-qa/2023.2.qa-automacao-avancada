@@ -2,20 +2,23 @@ Feature: Team 3 - SeuBarriga Login
 
   Background: The user is already registered on the system and will try to login
 
+  @c1
   Scenario: 001 - Login (Positive)
     Given the SeuBarriga login page is loaded
     When the user inserts valid credentials and clicks on the login button
     Then the system will redirect you to the home page
 
+  @c2
   Scenario Outline: 002/003 - Login (Empty) - Fields are Required
     Given the SeuBarriga login page is loaded
     When the user leaves either "<username>" and-or "<password>" empty and tries to login
     Then the system a message that says all the fields are required
     Examples:
-      | username  | password |
+      | username            | password       |
       |                     |    12345       |
       | itlins@yopmail.com  |                |
 
+  @c3
   Scenario Outline: 004/005/006 - Login (Invalid) Invalid credentials
     Given the SeuBarriga login page is loaded
     When the user inserts an invalid "<username>" and~or "<password>" and clicks on
