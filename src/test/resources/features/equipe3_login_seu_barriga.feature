@@ -12,7 +12,7 @@ Feature: Team 3 - SeuBarriga Login
   Scenario Outline: 002/003 - Login (Empty) - Fields are Required
     Given the SeuBarriga login page is loaded
     When the user leaves either "<username>" and-or "<password>" empty and tries to login
-    Then the system brings a "<message>" that says the fields that are mandatory
+    Then the system shows a "<message>" that says the fields that are mandatory
     Examples:
       | username            | password       | message                      |
       |                     |    12345       | Email é um campo obrigatório |

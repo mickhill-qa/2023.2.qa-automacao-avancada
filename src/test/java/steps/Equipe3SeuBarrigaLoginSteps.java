@@ -42,7 +42,7 @@ public class Equipe3SeuBarrigaLoginSteps extends BaseSteps {
         Assert.assertTrue(loginPage.verificação_login_sucess());
         screenshot();
     }
-    @Then("the system brings a {string} that says the fields that are mandatory")
+    @Then("the system shows a {string} that says the fields that are mandatory")
     public void the_system_brings_a_that_says_the_fields_that_are_mandatory(String mensagem) {
         Assert.assertTrue(loginPage.email_senha_obrigatorio(mensagem));
         screenshot();
