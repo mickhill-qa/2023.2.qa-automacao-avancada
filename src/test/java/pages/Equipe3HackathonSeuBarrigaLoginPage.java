@@ -44,4 +44,15 @@ public class Equipe3HackathonSeuBarrigaLoginPage extends BasePage {
     public void botao_login (){
         driver.findElement(botao_login).click();
     }
+
+    public boolean homePageIsLoaded(){
+        String expectedUrl = "https://seubarriga.wcaquino.me/logar";
+        String currentUrl = driver.getCurrentUrl();
+        return currentUrl.equals(expectedUrl);
+    }
+    public boolean homePageIsLoaded2(){
+        String expectedUrl = "https://seubarriga.wcaquino.me/logout";
+        String currentUrl = driver.getCurrentUrl();
+        return currentUrl.equals(expectedUrl);
+    }
 }
