@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: Login no Site seu Barriga
+Funcionalidade: Login no Site Seu Barriga
 
   Contexto:
     Dado que o usuario esta na tela de login
