@@ -11,7 +11,7 @@ public class MickHillLoginEcorePage extends BasePage
     private By btnLogin = By.id("btnLogin");
     private By textAlertaErro = By.cssSelector("[role='alert']");
 
-    public void abrir ()
+    public void abrir()
     {
         driver.get(url);
     }
