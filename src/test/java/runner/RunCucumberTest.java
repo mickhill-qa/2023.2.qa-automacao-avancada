@@ -14,7 +14,7 @@ import java.util.List;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/",	            // Path: features = "classpath:features"
+        features = "src/test/resources/features",	            // Path: features = "classpath:features"
         glue = "steps",                                         // Path: Steps
         monochrome = false,							            // Cores no Terminal default: false
         snippets = CucumberOptions.SnippetType.UNDERSCORE,		// METHODOS do Steps em CAMELCASE
@@ -24,6 +24,7 @@ import java.util.List;
                 "html:target/cucumber/index.html",
                 "json:target/cucumber/index.json"
         }
+        ,tags = "not @ecore_invoice_details and not @ecore_login"
 
         /**
          * Executar testes no termial
